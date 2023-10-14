@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
       //let carrusel.id = 1;
 
       data.forEach(carrusel => {
-        console.log("x")
+        
         const continerOfGenerateds = document.createElement('div');
         continerOfGenerateds.id = 'container-of-generateds' + carrusel.id;
         continerOfGenerateds.classList.add('container-of-generateds');
@@ -117,6 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
     //carrusel.id++;
 
     .catch(error => {
-      console.error('Error fetching saved images:', error);
+    
     });
 });
