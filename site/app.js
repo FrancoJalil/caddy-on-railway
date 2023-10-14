@@ -31,11 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const formatIput = firstForm.elements["formatSelect"];
     const promptInput = firstForm.elements["prompt-input"];
 
-    console.log(author)
-    console.log(!!authorPhoto.src)
-    console.log(!authorPhoto.src)
-    console.log(author && !authorPhoto.src);
-    console.log(author && !!authorPhoto.src);
     if (promptInput.value.trim() === "" || (author && !authorPhotoStorage)) {
       // Evitar que el formulario se envíe
       event.preventDefault();
@@ -52,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('selectable-button-author').addEventListener('click', function () {
     const button = document.getElementById('selectable-button-author');
-    console.log("oks")
+ 
 
     if (button.classList.contains('selected')) {
       button.classList.remove('selected');
@@ -172,7 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
             axios.post('https://mikai-production.up.railway.app/author-photo/', { photo: photoData })
               .then(response => {
                 // Manejar la respuesta del servidor
-                console.log('Respuesta del servidor:', response.data);
+
                 localStorage.setItem('authorPhoto', response.data.photo_url);
                 authorPhotoStorage = localStorage.getItem('authorPhoto');
               })
@@ -271,7 +266,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Verificar si el objetivo (target) es un párrafo (<p>) dentro del contenedorDinamico
 
     if (targetElement.closest('.big-container') && targetElement.tagName === 'INPUT' && targetElement.type === 'checkbox' && targetElement.className !== 'checkbox-publish') {
-      console.log("alo")
+     
       // volver opacidad normal si estaban en 0.8
       var canvasContainerOp = document.getElementById('canvasContainer');
 
@@ -331,7 +326,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!listCheckboxChecked.includes(event.target)) {
 
         listCheckboxChecked.push(event.target);
-        console.log(listCheckboxChecked)
+    
       }
     }
   });
