@@ -26,15 +26,14 @@ async function refreshAccessToken() {
       });
   
       if (!response.ok) {
-        console.log("No se pudo refrescar el token")
+      
         //logoutUser();
         
       }
   
       const data = await response.json();
 
-      console.log("access", data.access);
-      console.log("refresh", data.refresh);
+   
   
       localStorage.setItem('access', data.access);
       localStorage.setItem('refresh', data.refresh);
@@ -43,7 +42,7 @@ async function refreshAccessToken() {
       refreshToken = data.refresh;
       return data.access;
     } catch (error) {
-      console.log("Error refresh...", error);
+    
       //logoutUser();
     }
   }
@@ -52,20 +51,20 @@ async function refreshAccessToken() {
 axios.interceptors.response.use(
     (response) => response,
     (error) => {
-        console.log("axios interceptó token expirado");
+
         const originalRequest = error.config;
 
         if (error.response.status === 401 && !originalRequest._retry) {
             originalRequest._retry = true;
             return refreshAccessToken().then((token) => {
-                console.log("refrescando");
+            
                 
                 originalRequest.headers.Authorization = `Bearer ${token}`; // + String(token)?
                 return axios(originalRequest);
             });
         }
 
-        console.log("Error access...", error);
+      
         
         //logoutUser();
     }
