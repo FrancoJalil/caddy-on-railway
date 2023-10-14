@@ -1,5 +1,9 @@
 :{$PORT}
-
 root * /srv
 file_server
+
+rewrite /home {
+    to /
+}
+
 try_files {path}.html {path}
