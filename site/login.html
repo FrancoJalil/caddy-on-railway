@@ -17,7 +17,7 @@
       const access_token = localStorage.getItem('access');
 
       if (access_token) {
-        const url = 'http://localhost:8000/api/token/verify'
+        const url = 'https://mikai-production.up.railway.app/api/token/verify'
         fetch(url, {
           method: 'POST',
           headers: {
@@ -85,7 +85,7 @@
 
         testAPI(accessToken); // Pass the access token to testAPI()
 
-        const url = 'http://localhost:8000/auth/facebook/'
+        const url = 'https://mikai-production.up.railway.app/auth/facebook/'
         fetch(url, {
           method: 'POST',
           headers: {
@@ -236,7 +236,7 @@
 <script>
   function onSuccess(userInfo) {
     console.log("Success", userInfo);
-    const url = 'http://localhost:8000/auth/google/'
+    const url = 'https://mikai-production.up.railway.app/auth/google/'
     fetch(url, {
       method: 'POST',
       headers: {
@@ -311,7 +311,7 @@
     function login() {
       const username = document.getElementById('username').value;
       const password = document.getElementById('password').value;
-      const url = 'http://localhost:8000/api/token/'; // Replace this with your actual API endpoint URL
+      const url = 'https://mikai-production.up.railway.app/api/token/'; // Replace this with your actual API endpoint URL
 
       fetch(url, {
         method: 'POST',
@@ -344,8 +344,6 @@
         });
     }
   </script>
-
-  <script src="router.js"></script>
 
 </body>
 
