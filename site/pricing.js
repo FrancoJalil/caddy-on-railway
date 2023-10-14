@@ -6,7 +6,7 @@ export function decodeJWTAndGetUsername(jwtToken) {
   var decoded = jwtToken.split(".");
 
   var jwt_decoded = JSON.parse(atob(decoded[1]))
-  console.log(jwt_decoded)
+
   return jwt_decoded;
 }
 
@@ -28,7 +28,7 @@ function ifNotPremium() {
     }).then(response => {
       if (!response.ok) {
         // Token verification failed, stay on the login page
-        console.log('Token verification failed');
+       
         return Promise.reject("Invalid token");
       }
       return response.json();
@@ -41,7 +41,7 @@ function ifNotPremium() {
         }
       })
       .catch(error => {
-        console.error('Token verification failed:', error);
+      
       });
     }
 }
@@ -53,13 +53,13 @@ function purchase() {
     .then(response => {
       // Capturar la respuesta exitosa
       const responseData = response.data;
-      console.log('Respuesta exitosa:', responseData);
+  
 
       // Aquí puedes hacer lo que necesites con los datos de la respuesta
     })
     .catch(error => {
       // Capturar los errores
-      console.error('Error en la solicitud:', error);
+  
       // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
     });
 }
