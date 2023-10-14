@@ -1,9 +1,9 @@
 
 
 export function refreshUserTokens() {
-    console.log("H)OLA");
+ 
     let accessTokenX = localStorage.getItem('access');
-    console.log("Aqui taria el access xD");
+
     const tokensElement = document.getElementById('tokens');
     axios.get('https://mikai-production.up.railway.app/get-user-tokens/', {
     headers: {
@@ -14,8 +14,7 @@ export function refreshUserTokens() {
 
             let userTokens = response.data.user_tokens
             tokensElement.textContent = userTokens
-            console.log(response);
-            console.log("CACA");
+        
 
         });
 }
