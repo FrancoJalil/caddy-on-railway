@@ -2,8 +2,8 @@
 root * /srv
 file_server
 
-rewrite /home {
-    to /
+rewrite  {
+    to home.html
 }
 
 try_files {path}.html {path}
