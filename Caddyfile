@@ -2,4 +2,4 @@
 
 root * /srv
 file_server
-ext .html
+try_files {path}.html {path}
