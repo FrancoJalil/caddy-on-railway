@@ -7,7 +7,7 @@ export function refreshUserTokens() {
     const tokensElement = document.getElementById('tokens');
     axios.get('https://mikai-production.up.railway.app/get-user-tokens/', {
     headers: {
-      'Authorization': 'Bearer ' + String(accessTokenX);
+      'Authorization': 'Bearer ' + String(accessTokenX)
     }
     })
         .then(response => {
