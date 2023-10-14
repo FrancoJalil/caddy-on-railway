@@ -1,5 +1,5 @@
 function getStartedFlux() {
-    console.log("hola");
+   
     // llevarlo a /signup con algun contexto
     window.location.href = "/login?next=pricing";
 }
