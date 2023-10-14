@@ -471,12 +471,12 @@ export function generateImage() {
                     ////console.log("ok!");
                     refreshUserTokens();
                 } else if (response.statusText === 'Unauthorized') {
-                    console.log("no2")
+                
                     //logoutUser();
                     ////console.log("Unauthorized")
                 }
                 else {
-                    console.log("no")
+                 
                     // Si el estado no es 200, muestra un mensaje de error o realiza alguna acción adecuada
                     window.location.href = "/home?err=01";
                     ////console.log("err")
@@ -615,7 +615,7 @@ export function generateImage() {
                             }
                             image_description = event.target.value;
                             imagesDataFront[contadorReal].image_description = image_description;
-                            console.log(imagesDataFront);
+                        
                         });
 
                         let canvasDiv = document.createElement('div');
