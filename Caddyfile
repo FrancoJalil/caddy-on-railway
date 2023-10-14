@@ -2,3 +2,4 @@
 
 root * /srv
 file_server
+ext .html
