@@ -2,15 +2,13 @@
 
 export function refreshUserTokens() {
     console.log("H)OLA");
-    let accessToken = localStorage.getItem('access');
+    let accessTokenX = localStorage.getItem('access');
     console.log("Aqui taria el access xD");
     const tokensElement = document.getElementById('tokens');
-    axios.get('https://mikai-production.up.railway.app/get-user-tokens', {
-    }, {
-        headers: {
-            'Authorization': 'Bearer ' + String(accessToken)
-            
-        }
+    axios.get('https://mikai-production.up.railway.app/get-user-tokens/', {
+    headers: {
+      'Authorization': 'Bearer ' + String(accessTokenX);
+    }
     })
         .then(response => {
 
