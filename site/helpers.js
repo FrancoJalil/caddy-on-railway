@@ -4458,6 +4458,12 @@ export function saveImage() {
         })
         .catch(error => {
             console.error('Error al guardar las imágenes modificadas:', error);
+
+            window.onbeforeunload = null;
+            showLoading(false);
+            detenerContador();
+
+            window.location.href = "/home?err=01";
         });
 }
 
