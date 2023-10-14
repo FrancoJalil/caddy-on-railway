@@ -143,7 +143,7 @@ export function putSelectedStyle() {
     }
 
     // close modal
-    console.log(selectedStyle);
+  
     
     document.getElementById('prompt-input').placeholder = selectedStyle.promptI;
     closeConfirmationModal();
@@ -255,11 +255,11 @@ export function chooseStyle(confirmationModalContainer, style, confirmationModal
     
     selectPost.addEventListener("change", function () {
         const selectedValue = selectPost.value;
-        console.log(selectedValue);
+     
 
         if (selectedValue === 'Solo') {
             localStorage.setItem('modal-style-type', 'Solo');
-            console.log("Dentro de solo");
+        
             // esconder los type Carrusel
             // Obtén una referencia al contenedor 'formatContainer' por su ID o de alguna otra manera
             const selectButtonblackMark = document.getElementById('modalContent');
@@ -269,7 +269,7 @@ export function chooseStyle(confirmationModalContainer, style, confirmationModal
                 const carruselElements = selectButtonblackMark.getElementsByClassName('Carrusel');
                 const soloElements = selectButtonblackMark.getElementsByClassName('Solo');
 
-                console.log(carruselElements);
+             
 
                 // Itera sobre los elementos y establece su estilo 'display' en 'none'
                 for (let i = 0; i < carruselElements.length; i++) {
@@ -286,7 +286,7 @@ export function chooseStyle(confirmationModalContainer, style, confirmationModal
 
         } else if (selectedValue === 'Carrusel') {
             localStorage.setItem('modal-style-type', 'Carrusel');
-            console.log("Dentro de carrusel");
+          
             // esconder los type Carrusel
             // Obtén una referencia al contenedor 'formatContainer' por su ID o de alguna otra manera
             const selectButtonblackMark = document.getElementById('modalContent');
@@ -297,7 +297,7 @@ export function chooseStyle(confirmationModalContainer, style, confirmationModal
                 const carruselElements = selectButtonblackMark.getElementsByClassName('Carrusel');
                 const soloElements = selectButtonblackMark.getElementsByClassName('Solo');
 
-                console.log(soloElements);
+           
                 // Itera sobre los elementos y establece su estilo 'display' en 'none'
                 for (let i = 0; i < carruselElements.length; i++) {
                     carruselElements[i].style.display = 'block';
