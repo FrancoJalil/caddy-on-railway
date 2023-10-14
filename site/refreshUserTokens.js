@@ -8,8 +8,7 @@ export function refreshUserTokens() {
     axios.get('https://mikai-production.up.railway.app/get-user-tokens/', {
     }, {
         headers: {
-            'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + String(accessToken),
+            'Authorization': 'Bearer ' + String(accessToken)
             
         }
     })
