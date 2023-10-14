@@ -478,7 +478,7 @@ export function generateImage() {
                 else {
                  
                     // Si el estado no es 200, muestra un mensaje de error o realiza alguna acción adecuada
-                    window.location.href = "/home?err=01";
+                    window.location.href = "/?err=01";
                     ////console.log("err")
                 }
 
@@ -808,7 +808,7 @@ export function generateImage() {
                 window.onbeforeunload = null;
                 console.error('Error en la solicitud: ' + error.message);
                 // Realiza alguna acción adecuada en caso de error, como redirigir o mostrar un mensaje de error
-                window.location.href = "/home?err=01";
+                window.location.href = "/?err=01";
               });
 
 
@@ -4463,7 +4463,7 @@ export function saveImage() {
             showLoading(false);
             detenerContador();
 
-            window.location.href = "/home?err=01";
+            window.location.href = "/?err=01";
         });
 }
 
