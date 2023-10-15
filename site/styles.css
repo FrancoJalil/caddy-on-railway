@@ -1075,7 +1075,7 @@ input[type="range"] {
 
 @media screen and (max-height: 682px) {
     #firstInputUser {
-        justify-content: space-between;
+        /*justify-content: space-between;*/
     }
 
     .format-title {
