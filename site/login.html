@@ -29,15 +29,15 @@
         }).then(response => {
           if (!response.ok) {
             // Token verification failed, stay on the login page
-            console.log('Token verification failed');
+
             return Promise.reject("Invalid token");
           }
           return response.json();
         })
           .then(data => {
-            console.log(data);
+            
             // Token verification successful, redirect to  page
-            console.log('Token verification successful');
+           
             window.location.href = "/";
           })
           .catch(error => {
@@ -49,100 +49,16 @@
     }
 
 
-    function statusChangeCallback(response) {
-      console.log('statusChangeCallback');
-      console.log(response);
-
-      if (response.status === 'connected') {
-        const accessToken = response.authResponse.accessToken; // Get the access token from the responseo
-        localStorage.setItem('fbAcessToken', accessToken);
-        //`https://graph.facebook.com/v17.0/17841444988068877?fields=name,profile_picture_url&access_token=`
+    
 
 
-
-        const fbUrlId = `https://graph.facebook.com/v17.0/me/accounts?access_token=${accessToken}`
-
-        let idFb;
-        let fbUrl;
-
-        fetch(fbUrlId)
-          .then((response) => response.json())
-          .then((data) => {
-            console.log("datos: ", data)
-
-            console.log('x', data.data[0])
-
-            fbUrl = `https://graph.facebook.com/v17.0/${data.data[0].id}?fields=name&access_token=${accessToken}`
-
-            fetch(fbUrl)
-              .then((responseDos) => responseDos.json())
-              .then((dataDos) => console.log(dataDos));
-
-          });
+    
 
 
+   
 
 
-        testAPI(accessToken); // Pass the access token to testAPI()
-
-        const url = 'https://mikai-production.up.railway.app/auth/facebook/'
-        fetch(url, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            auth_token: accessToken,
-          })
-        })
-          .then(response => response.json())
-          .then(data => {
-            console.log(data)
-            const accessToken = data.access;
-            const refreshToken = data.refresh;
-
-            // Store the tokens in localStorage or sessionStorage for future API requests
-            localStorage.setItem('access', accessToken);
-            localStorage.setItem('refresh', refreshToken);
-
-            window.location.href = "/";
-
-            // Optionally, you can redirect the user to another page upon successful login
-            //window.location.href = 'file:////franco/saas/cm-copilot/.html'; // Replace this with the URL you want to redirect to
-          })
-          .catch(error => {
-            console.error('Login failed:', error);
-            // Handle login error (e.g., display an error message to the user)
-          });
-
-
-
-      } else {
-        //document.getElementById('status').innerHTML = 'Login ' +
-        //'with facebook.';
-      }
-    }
-
-
-    function checkLoginState() {               // Called when a person is finished with the Login Button.
-      FB.getLoginStatus(function (response) {   // See the onlogin handler
-        statusChangeCallback(response);
-      });
-    }
-
-
-    window.fbAsyncInit = function () {
-      FB.init({
-        appId: '1020316779125492',
-        xfbml: true,                     // Parse social plugins on this webpage.
-        version: 'v17.0'           // Use this Graph API version for this call.
-      });
-
-
-      FB.getLoginStatus(function (response) {   // Called after the JS SDK has been initialized.
-        statusChangeCallback(response);        // Returns the login status.
-      });
-    };
+      
     /*
 
     function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
@@ -155,78 +71,11 @@
     }*/
 
     //
-    function testAPI(accessToken) {
-      console.log('Welcome! Fetching your information....');
-      FB.api(
-        '/me/permissions',
-        { access_token: accessToken },
-        function (response) {
-          if (response && !response.error) {
-            console.log(response);
-            const permissions = response.data;
-            console.log('Permissions:');
-            console.log(permissions);
-            // Here you can do whatever you want with the list of permissions,
-            // for example, display them in the HTML document
-            displayPermissions(permissions);
-          } else {
-            console.log('Error fetching permissions:', response.error);
-          }
-        }
-      );
-    }
-
-
-    function displayPermissions(permissions) {
-      const permissionsList = document.getElementById('permissions-list');
-      permissionsList.innerHTML = '<h3>Permisos actuales:</h3>';
-      permissions.forEach(permission => {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${permission.permission} - ${permission.status}`;
-        permissionsList.appendChild(listItem);
-      });
-    }
-    /*
-    function requestAdditionalPermissions() {
-      const additionalPermissions = ['pages_show_list', 'instagram_manage_insights', 'instagram_manage_comments',  'ads_management', 'instagram_content_publish', 'pages_read_engagement'];
-
-      FB.login(
-        function (response) {
-          if (response.authResponse) {
-            const accessToken = response.authResponse.accessToken;
-            testAPI(accessToken); // Llamar a testAPI solo si se concede el consentimiento
-            console.log(response);
-            console.log('Permisos adicionales concedidos:', response.authResponse);
-            // Realiza cualquier acción adicional que desees después de obtener los permisos
-          } else {
-            // El usuario ha rechazado el inicio de sesión o ha cerrado el cuadro de diálogo
-            console.log('Inicio de sesión o permisos adicionales rechazados.');
-          }
-        },
-        { scope: additionalPermissions.join(',') }
-      );
-    }
-    */
-
-  //
-
+    
+  
   </script>
 
-  <div id="status">
-  </div>
-  <!--
-  <fb:login-button scope="
-    public_profile,
-    email,
-    instagram_basic,
-    pages_show_list,
-    ads_management,
-    pages_read_engagement,
-    business_management,
-    instagram_manage_insights,
-    instagram_content_publish" onlogin="checkLoginState();">
-  </fb:login-button>
--->
+  
 
 </head>
 
