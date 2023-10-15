@@ -4,7 +4,7 @@ body {
 }
 
 .content-container {
-    height: 90vh;
+    padding: 2.3rem 0;
     color: #f2f2f2;
     display: flex;
     align-items: center;
@@ -14,7 +14,7 @@ body {
 }
 
 .extra-container {
-    height: 100vh;
+    padding: 2.3rem 0;
     color: #f2f2f2;
     display: flex;
     align-items: center;
@@ -147,7 +147,7 @@ img {
 
 
 .extra-container {
-    height: 100vh;
+    
     color: #f2f2f2;
     display: flex;
     align-items: center;
