@@ -4434,12 +4434,21 @@ export function saveImage() {
     //let datetimeInputList = getDatetetimeInput();
 
     // Crear un arreglo para almacenar las imágenes modificadas en base64
-    // En tu función saveImage
-    const modifiedImages = canvases.map(canvasDataDic => ({
-    image: convertToBase64(canvasDataDic.canvas),
-    num_carrusel: canvasDataDic.num_carrusel,
-    image_position: canvasDataDic.image_position
-}));
+    let modifiedImages = [];
+
+    // Recorrer todos los canvas modificados
+    canvases.forEach(function (canvasDataDic, index) {
+
+        //let canvasR = canvasDatax.canvas;
+        let canvasx = canvasDataDic.canvas;
+        // Convertir el contenido del canvas en base64
+        let modifiedImageBase64 = canvasx.toDataURL({
+            format: 'png', // Puedes cambiar el formato a 'jpeg' si lo deseas
+            quality: 0.8 // Puedes ajustar la calidad de la imagen si lo deseas (valor entre 0 y 1)
+        });
+        // Agregar la imagen base64 al arreglo
+        modifiedImages.push({ image: modifiedImageBase64, num_carrusel: canvasDataDic.num_carrusel, image_position: canvasDataDic.image_position });
+    });
 
     // Suponiendo que tienes un array de imágenes codificadas en Base64 llamado "modifiedImages"
     //let cleanedImages = modifiedImages.map(imageData => imageData.replace(/\s/g, ''));
