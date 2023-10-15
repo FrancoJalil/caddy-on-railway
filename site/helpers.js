@@ -3573,7 +3573,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
             // Configurar la imagen
             //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
             //imgX.scale(0.5);
-            
+            imgX.scaleToWidth(100);
             imgX.set({
                 left: 765,
                 top: 150,
@@ -3581,12 +3581,10 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
 
             });
 
-            var imageSize = imgX.getScaledWidth();
-            imgX.scaleToWidth(110);
 
             // Crear un círculo de recorte
             var clipPath = new fabric.Circle({
-                radius: imageSize / 2,
+                radius: 470,
                 originX: 'center',
                 originY: 'center',
                 selectable: true,
@@ -3618,7 +3616,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                 });
 
                 var imageSize = imgX.getScaledWidth();
-                imgX.scaleToWidth(110);
+                imgX.scaleToWidth(80);
 
                 // Crear un círculo de recorte
                 var clipPath = new fabric.Circle({
