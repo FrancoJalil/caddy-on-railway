@@ -4403,14 +4403,6 @@ export function addPaddingIfNeeded(imageData) {
     return imageData;
 }
 
-function convertToBase64(canvas) {
-    return canvas.toDataURL({
-        format: 'png',
-        quality: 0.8
-    });
-}
-
-
 export function saveImage() {
     showLoading(true);
     activarContador();
