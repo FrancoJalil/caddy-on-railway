@@ -16,6 +16,8 @@ function decodeJWTAndGetUsername(jwtToken) {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+  refreshUserTokens();
+
   // extraer data jwt aquí
   const accessToken = localStorage.getItem('refresh');
 
@@ -30,6 +32,6 @@ document.addEventListener('DOMContentLoaded', () => {
   photoElement.src = decodedToken.picture;
   
 
-  refreshUserTokens();
+  
 
 });
