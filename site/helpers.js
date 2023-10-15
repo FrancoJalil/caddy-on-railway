@@ -4403,91 +4403,60 @@ export function addPaddingIfNeeded(imageData) {
     return imageData;
 }
 
-export function saveImage() {
-    showLoading(true);
-    activarContador();
-    let containerInputMenu = document.getElementById("generated-container");
-    containerInputMenu.style.display = 'none';
-    ////console.log("loading...")
-    
+export async function saveImage() {
+    try {
+        showLoading(true);
+        activarContador();
 
-    // hacer cositas cuando esté cargando...
+        const containerInputMenu = document.getElementById("generated-container");
+        const saveImageButton = document.getElementById("save-image-button");
 
-    // desaparecer anterior container
-    
+        // Ocultar el botón
+        saveImageButton.classList.add("disabled-button");
 
-    // deshabilitar botón por posibles bugs
-    let saveImageButton = document.getElementById("save-image-button");
-    // Ocultar el botón
-    saveImageButton.classList.add("disabled-button");
-    //saveImageButton.disabled = true;
+        const access_token_g = localStorage.getItem('access');
 
-    // datetime
-    //let datetimeInputList = getDatetetimeInput();
+        const modifiedImages = await Promise.all(canvases.map(async (canvasDataDic) => {
+            const canvasx = canvasDataDic.canvas;
+            const modifiedImageBase64 = await new Promise((resolve) => {
+                canvasx.toBlob((blob) => {
+                    const reader = new FileReader();
+                    reader.onload = () => resolve(reader.result);
+                    reader.readAsDataURL(blob);
+                }, 'image/png', 0.8);
+            });
 
-    // Crear un arreglo para almacenar las imágenes modificadas en base64
-    let modifiedImages = [];
+            return {
+                image: modifiedImageBase64,
+                num_carrusel: canvasDataDic.num_carrusel,
+                image_position: canvasDataDic.image_position,
+            };
+        }));
 
-    // Recorrer todos los canvas modificados
-    canvases.forEach(function (canvasDataDic, index) {
-
-        //let canvasR = canvasDatax.canvas;
-        let canvasx = canvasDataDic.canvas;
-        // Convertir el contenido del canvas en base64
-        let modifiedImageBase64 = canvasx.toDataURL({
-            format: 'png', // Puedes cambiar el formato a 'jpeg' si lo deseas
-            quality: 0.8 // Puedes ajustar la calidad de la imagen si lo deseas (valor entre 0 y 1)
-        });
-        // Agregar la imagen base64 al arreglo
-        modifiedImages.push({ image: modifiedImageBase64, num_carrusel: canvasDataDic.num_carrusel, image_position: canvasDataDic.image_position });
-    });
-
-    // Suponiendo que tienes un array de imágenes codificadas en Base64 llamado "modifiedImages"
-    //let cleanedImages = modifiedImages.map(imageData => imageData.replace(/\s/g, ''));
-    //let paddedImages = cleanedImages.map(addPaddingIfNeeded);
-    let access_token_g = localStorage.getItem('access');
-
-    // Realizar la solicitud POST al backend para guardar las imágenes modificadas
-    axios.post('https://mikai-production.up.railway.app/image-generation/save_images',
-        JSON.stringify({
+        const response = await axios.post('https://mikai-production.up.railway.app/image-generation/save_images', {
             images: modifiedImages,
             images_data: imagesDataFront,
             prompt: valuePromptInput,
-            // datetime
-            //dates: datetimeInputList,
             carruselUnpublished: carruselUnpublished,
-            numberOfCarrus: numberOfCarrus
-        }),
-        {
+            numberOfCarrus: numberOfCarrus,
+        }, {
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + String(access_token_g)
-            }
-        })
-        .then(response => {
-            window.onbeforeunload = null;
-            showLoading(false);
-            detenerContador();
-            const data = response.data;
-            // Aquí puedes realizar alguna acción en caso de que la respuesta sea exitosa
-            window.location.href = "/my-generations";
-            /*
-            ////console.log('Imágenes modificadas guardadas correctamente.');
-            let containerGenerated = document.getElementById("generated-container");
-            containerGenerated.innerHTML = '<h1>Imagenes programadas correctamente</h1>';
-            */
-
-        })
-        .catch(error => {
-            console.error('Error al guardar las imágenes modificadas:', error);
-
-            window.onbeforeunload = null;
-            showLoading(false);
-            detenerContador();
-
-            window.location.href = "/?err=01";
+                'Authorization': 'Bearer ' + String(access_token_g),
+            },
         });
+
+        showLoading(false);
+        detenerContador();
+        window.location.href = "/my-generations";
+    } catch (error) {
+        console.error('Error al guardar las imágenes modificadas:', error);
+        showLoading(false);
+        detenerContador();
+        window.location.href = "/?err=01";
+    }
 }
+
 
 
 
