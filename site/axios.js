@@ -27,7 +27,7 @@ async function refreshAccessToken() {
   
       if (!response.ok) {
       
-        //logoutUser();
+        logoutUser();
         
       }
   
@@ -43,7 +43,7 @@ async function refreshAccessToken() {
       return data.access;
     } catch (error) {
     
-      //logoutUser();
+      logoutUser();
     }
   }
 
@@ -66,7 +66,7 @@ axios.interceptors.response.use(
 
       
         
-        //logoutUser();
+        logoutUser();
     }
 );
 
