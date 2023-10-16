@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
   //document.getElementById('photo') decodedToken.picture
 
   // Obtener el elemento de imagen por su id
+  const logoutButton = document.getElementById('logoutButton');
+  const cancelarSuscripcion = document.getElementById('cancelarSuscripcion');
   const photoElement = document.getElementById('photo');
   const photoElementP = document.getElementById('profilePhoto');
   const emailElement = document.getElementById('email');
@@ -33,8 +35,20 @@ document.addEventListener('DOMContentLoaded', () => {
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"
   photoElementP.src = decodedToken.picture;
   photoElement.src = decodedToken.picture;
+
+  logoutButton.addEventListener('click', function () {
+    // LOGOUT SER
+    localStorage.removeItem('access')
+    localStorage.removeItem('refresh')
+    // Redireccionar a otra página
+    window.location.href = "/login";
+  });
+
+  cancelarSuscripcion.addEventListener('click', function () {
+    //abrir modal
+  });
   
 
-  refreshUserTokens();
+  //refreshUserTokens(); posible error? quitar coments si es así.
 
 });

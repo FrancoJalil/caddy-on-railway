@@ -13,6 +13,9 @@ export function refreshUserTokens() {
         .then(response => {
 
             let userTokens = response.data.user_tokens
+            if (!userTokens) {
+              userTokens = 0;
+            }
             tokensElement.textContent = userTokens
         
 

@@ -370,7 +370,7 @@ function showLoading(show) {
     let loadText = document.getElementById('loadText');
     if (show) {
         
-        loadText.innerHTML = "Hi"
+        loadText.innerHTML = "Convirtiendo los lienzos a imagenes"
         contLoader.style.height = "100%";
         generateContainer.style.height = "70%";
         generateContainer.style.display = 'flex';
@@ -4403,91 +4403,114 @@ export function addPaddingIfNeeded(imageData) {
     return imageData;
 }
 
-export function saveImage() {
-    showLoading(true);
-    activarContador();
-    let containerInputMenu = document.getElementById("generated-container");
-    containerInputMenu.style.display = 'none';
-    ////console.log("loading...")
-    
-
-    // hacer cositas cuando esté cargando...
-
-    // desaparecer anterior container
-    
-
-    // deshabilitar botón por posibles bugs
-    let saveImageButton = document.getElementById("save-image-button");
-    // Ocultar el botón
+export async function saveImage() {
+    const saveImageButton = document.getElementById("save-image-button");
     saveImageButton.classList.add("disabled-button");
-    //saveImageButton.disabled = true;
+    showLoading(true);
+    
+    try {
+        activarContador();
+        console.log("-1")
+    
+        const containerInputMenu = document.getElementById("generated-container");
+        containerInputMenu.style.display = 'none';
+        console.log("0")
+    
+        const modifiedImages = await generateModifiedImages();
+        console.log("1")
+    
+        const access_token_g = localStorage.getItem('access');
+    
+        saveImagesToBackend(modifiedImages, access_token_g)
+          .then(response => {
+            console.log("2")
+            showLoading(false);
+            detenerContador();
+    
+            if (response.success) {
+              window.onbeforeunload = null;
+              window.location.href = "/my-generations";
+            } else {
+              handleSaveError(response.errorCode);
+            }
+          })
+          .catch(error => {
+            console.error("Error en saveImagesToBackend:", error);
+            // Maneja el error de la promesa aquí
+    
+            // Puedes usar try...catch aquí si es necesario
+          });
 
-    // datetime
-    //let datetimeInputList = getDatetetimeInput();
 
-    // Crear un arreglo para almacenar las imágenes modificadas en base64
-    let modifiedImages = [];
+    } catch (error) {
+        console.error('Error al guardar las imágenes modificadas:', error);
+        window.onbeforeunload = null;
+        showLoading(false);
+        detenerContador();
+        window.location.href = "/?err=01";
+    }
+}
 
-    // Recorrer todos los canvas modificados
-    canvases.forEach(function (canvasDataDic, index) {
-
-        //let canvasR = canvasDatax.canvas;
-        let canvasx = canvasDataDic.canvas;
-        // Convertir el contenido del canvas en base64
-        let modifiedImageBase64 = canvasx.toDataURL({
-            format: 'png', // Puedes cambiar el formato a 'jpeg' si lo deseas
-            quality: 0.8 // Puedes ajustar la calidad de la imagen si lo deseas (valor entre 0 y 1)
+async function generateModifiedImages() {
+    const modifiedImages = await Promise.all(canvases.map(async (canvasDataDic) => {
+        const canvasx = canvasDataDic.canvas;
+        const modifiedImageBase64 = await new Promise((resolve) => {
+            setTimeout(() => {
+                resolve(canvasx.toDataURL({
+                    format: 'png',
+                    quality: 0.1
+                }));
+            }, 0);
         });
-        // Agregar la imagen base64 al arreglo
-        modifiedImages.push({ image: modifiedImageBase64, num_carrusel: canvasDataDic.num_carrusel, image_position: canvasDataDic.image_position });
-    });
 
-    // Suponiendo que tienes un array de imágenes codificadas en Base64 llamado "modifiedImages"
-    //let cleanedImages = modifiedImages.map(imageData => imageData.replace(/\s/g, ''));
-    //let paddedImages = cleanedImages.map(addPaddingIfNeeded);
-    let access_token_g = localStorage.getItem('access');
+        return {
+            image: modifiedImageBase64,
+            num_carrusel: canvasDataDic.num_carrusel,
+            image_position: canvasDataDic.image_position
+        };
+    }));
 
-    // Realizar la solicitud POST al backend para guardar las imágenes modificadas
-    axios.post('https://mikai-production.up.railway.app/image-generation/save_images',
-        JSON.stringify({
+    return modifiedImages;
+}
+
+
+function saveImagesToBackend(modifiedImages, access_token_g) {
+    return new Promise((resolve, reject) => {
+        axios.post('https://mikai-production.up.railway.app/image-generation/save_images', {
             images: modifiedImages,
             images_data: imagesDataFront,
             prompt: valuePromptInput,
-            // datetime
-            //dates: datetimeInputList,
             carruselUnpublished: carruselUnpublished,
             numberOfCarrus: numberOfCarrus
-        }),
-        {
+        }, {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + String(access_token_g)
             }
         })
         .then(response => {
-            window.onbeforeunload = null;
-            showLoading(false);
-            detenerContador();
-            const data = response.data;
-            // Aquí puedes realizar alguna acción en caso de que la respuesta sea exitosa
-            window.location.href = "/my-generations";
-            /*
-            ////console.log('Imágenes modificadas guardadas correctamente.');
-            let containerGenerated = document.getElementById("generated-container");
-            containerGenerated.innerHTML = '<h1>Imagenes programadas correctamente</h1>';
-            */
-
+            resolve({ success: true, data: response.data });
         })
         .catch(error => {
-            console.error('Error al guardar las imágenes modificadas:', error);
-
-            window.onbeforeunload = null;
-            showLoading(false);
-            detenerContador();
-
-            window.location.href = "/?err=01";
+            reject({ success: false, errorCode: error.response ? error.response.status : null });
         });
+    });
 }
+
+function handleSaveError(errorCode) {
+    switch (errorCode) {
+        // Handle specific error codes or provide a generic error message
+        case 401:
+            // Unauthorized error
+            // Display a message to the user or take appropriate action
+            break;
+        // Add more cases for specific error handling as needed
+        default:
+            // Generic error handling
+            window.location.href = "/?err=01";
+    }
+}
+
 
 
 
