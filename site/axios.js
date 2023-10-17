@@ -25,9 +25,10 @@ async function refreshAccessToken() {
         })
       });
   
-      if (!response.ok) {
+      if (response.status === 401) {
       
-        logoutUser();
+        //logoutUser();
+        console.log("1")
         
       }
   
@@ -42,8 +43,8 @@ async function refreshAccessToken() {
       refreshToken = data.refresh;
       return data.access;
     } catch (error) {
-    
-      logoutUser();
+      console.log("2")
+      //logoutUser();
     }
   }
 
@@ -65,8 +66,8 @@ axios.interceptors.response.use(
         }
 
       
-        
-        logoutUser();
+        console.log("3")
+        //logoutUser();
     }
 );
 
