@@ -66,7 +66,7 @@ axios.interceptors.response.use(
         }
 
       
-        console.log("3")
+        console.log("3", error)
         logoutUser();
     }
 );
