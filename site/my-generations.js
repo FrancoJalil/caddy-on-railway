@@ -104,7 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
           // Add a download all button for the carrusel
           const downloadAllButton = document.createElement('button');
-          downloadAllButton.innerHTML = '<div style="display: flex; align-items: center; justify-content: space-between;"><img style="width: 20px;" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png"> <p style="margin-left: 0.2rem">Download All</p></div>';
+          downloadAllButton.innerHTML = '<div style="display: flex; align-items: center; justify-content: space-between;"><img style="width: 20px;" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png"> <p style="margin-left: 0.2rem;">Download All</p></div>';
           downloadAllButton.addEventListener('click', () => {
             const zip = new JSZip();
             const textFile = new Blob([descCaru.value], { type: 'text/plain' });

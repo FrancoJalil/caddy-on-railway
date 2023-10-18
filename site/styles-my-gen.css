@@ -76,7 +76,7 @@ img {
     right: 10px; /* Ajusta la posición horizontal del botón dentro de la imagen */
     padding: 10px 15px;
     background-color: rgb(98, 59, 160);
-    color: #fff;
+    color: rgb(242 242 242);
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -103,7 +103,7 @@ textarea {
 }
 
 .text-field-mg {
-    color: #FFF;
+    color: rgb(242 242 242);
     background-color: rgb(18, 18, 18);
     height: 180px;
     width: 180px;
