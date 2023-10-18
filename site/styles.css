@@ -43,7 +43,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: Inter, sans-serif;
-    background: radial-gradient(50% 50.00% at 50% 50.00%, #23005C 0%, #010101 100%);
+    background: #161616;
     color: rgba(255, 255, 255, 0.5);
     align-items: center;
     height: 100vh;
@@ -341,14 +341,15 @@ img {
 }
 
 .prompt-input {
+    
     margin: 0;
     margin-bottom: 0.3rem;
     width: 100%;
     height: 2.5rem;
     border-radius: .25rem;
     /*border: 1.5px solid rgba(255, 255, 255, 0.30);*/
-    border: none;
-    background: rgb(15 17 18);
+    border: 1px solid rgb(40, 40, 40);
+    background: rgb(28, 28, 28);
     color: rgb(151, 151, 151);
     font-size: 1rem;
     font-style: italic;
@@ -433,16 +434,17 @@ img {
 }
 
 .format-title {
-    background-color: #010101;
+    font-size: 40px;
+    background-color: rgb(40,40,40);
     padding: 0.5rem 1.3rem;
-    border-radius: 10rem;
+    border-radius: 0.4rem;
     margin-top: -1.4rem !important;
-    width: fit-content;
+    width: max-content;
     text-align: left;
     margin: 0.8rem 10rem;
     font-weight: 600;
     font-family: Inter;
-    color: rgba(255, 255, 255, 1);
+    color: rgb(242 242 242);
 }
 
 .generate-button {
@@ -607,10 +609,12 @@ input {
 *::-webkit-scrollbar {
     background-color: rgba(0, 0, 0, 0);
     width: 11px;
-    width: 11px;
+    margin: 0rem 1rem 0rem 1rem;
 }
 
-*::-webkit-scrollbar-track {}
+*::-webkit-scrollbar-track {
+    background-color: rgba(0,0,0,0);
+}
 
 *::-webkit-scrollbar-thumb {
     border-radius: 5px;

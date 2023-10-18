@@ -20,11 +20,11 @@ h1 {
 .container-calendar {
     display: flex;
     flex-direction: column;
-    overflow-x: scroll;
     align-items: center;
     scrollbar-color: black;
     padding: 2rem;
-    background-color: rgb(15 17 18);
+    background-color: rgb(28, 28, 28);
+    border: 1px solid rgb(40, 40, 40);
     border-radius: 1rem;
     margin: 1rem;
     display: inline-flex;
@@ -41,8 +41,8 @@ h1 {
 .images-container {
     display: flex;
     flex-direction: row;
-    overflow: auto;
     align-items: center;
+    border: 1px solid rgb(40, 40, 40);
 }
 
 .images-container img {
