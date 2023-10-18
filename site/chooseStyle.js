@@ -20,7 +20,7 @@ export let stylesJSON = {
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953937/media/carousel-images/Ccarrusel_0-P3_si7zts.png',
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953939/media/carousel-images/Ccarrusel_0-P4_zqyame.png',
             ],
-            promptI: 'Type a prompt... Ej: Peliculas de pixar'
+            promptI: 'Dioses Romanos // Segunda guerra mundial // Egipto // Naturaleza // Salud'
         },
         {
             title: TIPS,
@@ -33,7 +33,7 @@ export let stylesJSON = {
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954289/media/carousel-images/Ccarrusel_3-P3_c2uzun.png',
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954291/media/carousel-images/Ccarrusel_3-P4_lkl9ft.png',
             ],
-            promptI: '4 Tips... Ej: << Bajar de peso >>'
+            promptI: 'Bajar de peso // Programación web // Leer más rapido // Mejorar profesionalmente'
         },
         {
             title: TRANSPARENT_MARK,
@@ -47,7 +47,7 @@ export let stylesJSON = {
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954661/media/carousel-images/Ccarrusel_2-P3_mubtqv.png',
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954665/media/carousel-images/Ccarrusel_2-P4_r8pnco.png'
             ],
-            promptI: 'Type a prompt... Ej: << Segunda guerra mundial >>'
+            promptI: 'Dioses Romanos // Segunda guerra mundial // Egipto // Naturaleza // Salud'
         },
         {
             title: INFORMARTIVO,
@@ -61,7 +61,7 @@ export let stylesJSON = {
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955467/media/carousel-images/Ccarrusel_2-P3_wdxijs.png',
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955470/media/carousel-images/Ccarrusel_2-P4_qc1c82.png'
             ],
-            promptI: 'Type a prompt... Ej: << Dioses Romanos >>'
+            promptI: 'Dioses Romanos // Segunda guerra mundial // Egipto // Naturaleza // Salud'
         },
         {
             title: AUTHOR_PHRASE_1,
@@ -70,7 +70,7 @@ export let stylesJSON = {
             images: [
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696694532/media/carousel-images/Ccarrusel_1-P0_yh5qjb.png'
             ],
-            promptI: 'Type a prompt... Ej: << Marco Aurelio >>'
+            promptI: 'Marco Aurelio // Albert Einstein // Sócrates // Nikola Tesla'
         },
         {
             title: DATO_CURIOSO,
@@ -79,7 +79,7 @@ export let stylesJSON = {
             images: [
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696956346/media/carousel-images/Ccarrusel_3-P0_uivy77.png'
             ],
-            promptI: 'Dato curioso de ... Ej: << Osos Panda >>'
+            promptI: 'Osos Panda // Naturaleza // El Universo // La Biblia // Matemáticas'
         },
         {
             title: AUTHOR_PHRASE_2,
@@ -88,7 +88,7 @@ export let stylesJSON = {
             images: [
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696956698/media/carousel-images/Ccarrusel_0-P0_xgbrlo.png'
             ],
-            promptI: 'Frases de ... Ej: << Albert Einstein >>'
+            promptI: 'Marco Aurelio // Albert Einstein // Sócrates // Nikola Tesla'
         },
         {
             title: SABIAS_QUE,
@@ -97,7 +97,7 @@ export let stylesJSON = {
             images: [
                 'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696957201/media/carousel-images/Ccarrusel_0-P0_sh2s2x.png'
             ],
-            promptI: '¿Sabias que...? Ej: << Naturaleza >>'
+            promptI: 'Osos Panda // Naturaleza // El Universo // La Biblia // Matemáticas'
         }
     ]
 }

@@ -109,7 +109,9 @@ canvas {
 ::-webkit-scrollbar-track {
     background-color: black;
 }
-
+#author-modal {
+    border: 1px solid rgb(40, 40, 40);
+}
 
 .containerDesc {
     display: flex;
@@ -200,7 +202,7 @@ canvas {
 }
 
 .canvas-selected {
-    border: 2px solid white;
+    border: 2px solid rgb(242 242 242);
 }
 
 .Anton {
@@ -233,7 +235,7 @@ input {
 
 #textInput {
     padding: 0.3rem;
-    color: white;
+    color: rgb(242 242 242);
     border-radius: .25rem;
     border: 1.5px solid rgba(255, 255, 255, 0.30);
     background-color: #121212;
@@ -553,7 +555,7 @@ img {
 }
 
 li.active a {
-    color: white;
+    color: rgb(242 242 242);
     /* Color para elementos "active" */
 }
 
@@ -577,7 +579,7 @@ li.active a {
     background-color: #121212;
     opacity: 80%;
     height: 80%;
-    border: 1px solid white;
+    border: 1px solid rgb(242 242 242);
 }
 
 #container-editable button,
@@ -728,7 +730,7 @@ button {
     margin-top: 10px;
     padding: 8px 16px;
     background-color: rgba(149, 92, 242, 0.50);
-    color: white;
+    color: rgb(242 242 242);
     border: none;
     border-radius: 4px;
     cursor: pointer;
@@ -953,6 +955,7 @@ input[type="range"] {
 
 .arroba {
     margin-left: 0.2rem;
+    padding-bottom: 0.15rem;
 }
 
 #selectable-button-author.selected {

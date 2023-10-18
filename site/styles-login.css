@@ -1,7 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
 body {
-    background: radial-gradient(50% 50.00% at 50% 50.00%, #23005C 0%, #010101 100%);
+    font-family: Inter, sans-serif;
+    background: #161616;
     display: flex;
     align-items: center;
     display: flex;
@@ -19,6 +20,7 @@ body {
     align-items: left;
     border-radius: 3.75rem;
     padding: 3rem;
+    border: 1px solid rgb(40, 40, 40);
 }
 
 .login-form {

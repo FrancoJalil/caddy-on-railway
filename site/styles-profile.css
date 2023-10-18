@@ -26,7 +26,7 @@ h1 {
     flex-direction: row;
     width: 70%;
     border-radius: 3.25rem;
-    border: 1px solid rgb(40, 40, 40);
+    border: 1px solid #474747;
     
 }
 
@@ -98,3 +98,71 @@ h1 {
     width: 70%;
 }
 
+/* MODAL */
+.modal-profile {
+    height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    backdrop-filter: blur(7px);
+}
+
+.modal-profile-content {
+    color: rgb(242 242 242);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 20vh;
+    width: 40%;
+    margin: 15% auto;
+    background: #121212;;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+.modal-profile-content input {
+    background-color: #121212;
+    color: rgb(151, 151, 151);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #474747;
+    border-radius: 5px;
+}
+
+.modal-profile-content input:focus {
+    box-shadow: inset 0 0 0 1px #955280;
+    outline: none;
+}
+
+.modal-profile-content button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+
+.modal-profile-content .disabled-button-profile {
+    cursor:not-allowed !important;
+    background-color: #b62d2b;
+    opacity: 0.3;
+}
+
+.modal-profile-content .active-button-profile {
+    background-color: #b62d2b !important;
+    border: #b62d2b;
+}
+
+.modal-profile-content .active-button-profile:hover {
+    background-color: #ff3b3b !important;
+}
+
+#cancelarSuscripcion {
+    background: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}

@@ -1,4 +1,5 @@
 body {
+    background: radial-gradient(50% 50.00% at 50% 50.00%, #23005C 0%, #010101 100%);
     align-items: center;
     justify-content: space-between;
 }

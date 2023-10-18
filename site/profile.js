@@ -28,7 +28,11 @@ document.addEventListener('DOMContentLoaded', () => {
   const photoElement = document.getElementById('photo');
   const photoElementP = document.getElementById('profilePhoto');
   const emailElement = document.getElementById('email');
+  const emailInput = document.getElementById('emailInput');
   const statusElement = document.getElementById('status');
+  const modal = document.getElementById('modal-profile');
+  const cancelarBtn = document.getElementById('cancelarBtn');
+  const enviarBtn = document.getElementById('enviarBtn');
 
   statusElement.textContent = decodedToken.status;
   emailElement.textContent = decodedToken.email;
@@ -45,8 +49,31 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   cancelarSuscripcion.addEventListener('click', function () {
-    //abrir modal
+    modal.style.display = 'block';
   });
+
+  cancelarBtn.addEventListener('click', function () {
+    modal.style.display = 'none';
+});
+
+emailInput.addEventListener('input', (e) => {
+  let emailUserInput = e.target.value;
+  let userEmail = decodedToken.email;
+  console.log(emailUserInput);
+
+
+  if (emailUserInput === userEmail) {
+    console.log("OK")
+    enviarBtn.classList.add('active-button-profile')
+    enviarBtn.classList.remove('disabled-button-profile')
+
+  } else {
+    if (enviarBtn.classList.contains('active-button-profile')) {
+      enviarBtn.classList.add('disabled-button-profile')
+      enviarBtn.classList.remove('active-button-profile')
+    }
+  }
+})
   
 
   //refreshUserTokens(); posible error? quitar coments si es así.

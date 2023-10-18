@@ -95,6 +95,7 @@
                 </div>
                 <button id="logoutButton" style="width: fit-content; background-color: brown; opacity: 0.5;" type="button">logout</button>
                 <button id="cancelarSuscripcion" style="width: fit-content; background-color: brown; opacity: 0.5;" type="button">Cancelar suscripción</button>
+                
             </div>
             
             </div>
@@ -104,6 +105,16 @@
             </div>
         </div>
 
+    </div>
+
+    <!-- MODAL -->
+    <div id="modal-profile" class="modal-profile" style="display: none;">
+        <div class="modal-profile-content">
+            <p>Type your email to confirm</p>
+            <input autocomplete="off" id="emailInput">
+            <button class="disabled-button-profile" id="enviarBtn">OK</button>
+            <button id="cancelarBtn">Cancelar</button>
+        </div>
     </div>
 
     <script>

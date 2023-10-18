@@ -24,7 +24,7 @@ h1 {
     scrollbar-color: black;
     padding: 2rem;
     background-color: rgb(28, 28, 28);
-    border: 1px solid rgb(40, 40, 40);
+    border: 1px solid #474747;
     border-radius: 1rem;
     margin: 1rem;
     display: inline-flex;

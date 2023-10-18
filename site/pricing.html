@@ -38,7 +38,7 @@
     </div>
   </div>
 -->
-   <div class="extra-container" style="height: 80% !important justify-content: space-around !important;;">
+   <div class="extra-container" style="height: 80% !important; justify-content: space-around !important;;">
             <h1>1 Plan <span class="gradient">∞</span> creadores</h1>
             <div class="bloque" style="margin: 2rem 0;">
                 <div class="content">
@@ -107,7 +107,7 @@
         // You can add optional success message for the subscriber here
         alert(data.subscriptionID);
         // enviar data.subscriptionID al backend
-        axios.post('http://localhost:8000/payments/paypal/subscription/on-success', {
+        axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/on-success', {
           subscriptionID: data.subscriptionID
         }, {
           headers: {
