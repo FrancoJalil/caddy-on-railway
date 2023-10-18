@@ -106,13 +106,14 @@
       onApprove: function (data, actions) {
         // You can add optional success message for the subscriber here
         alert(data.subscriptionID);
+        let access = localStorage.getItem('access');
         // enviar data.subscriptionID al backend
         axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/on-success', {
           subscriptionID: data.subscriptionID
         }, {
           headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Bearer ' + String(localStorage.getItem('access'))
+            'Authorization': 'Bearer ' + String(access)
           }
         })
           .then(response => {
