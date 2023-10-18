@@ -95,6 +95,7 @@ canvas {
 }
 
 .big-container {
+    border: 1px solid rgb(40, 40, 40);
     overflow-x: scroll;
     scrollbar-color: black;
     padding: 2rem;
@@ -448,6 +449,7 @@ img {
 }
 
 .generate-button {
+    
     transition: 0.2s;
     border: none;
     border-radius: .25rem;
@@ -463,6 +465,7 @@ img {
 
 
 #generate-button {
+    border: 1px solid rgb(40, 40, 40);
     border-radius: 50px;
     background: linear-gradient(81.02deg, rgb(250, 85, 96) -23.47%, rgb(177, 75, 244) 45.52%, rgb(77, 145, 255) 114.8%);
 }
@@ -568,7 +571,7 @@ li.active a {
 
 .container-editable {
     display: none;
-
+    border: 1px solid rgb(40, 40, 40);
     align-items: center;
     text-align: center;
     background-color: #121212;

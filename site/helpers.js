@@ -364,13 +364,13 @@ function reloadGenerate() {
 
 // global variable, asi no se acumulan
 
-function showLoading(show) {
+function showLoading(show, text) {
     let generateContainer = document.getElementById('loadingSkeleton');
     let contLoader = document.getElementById('contLoader');
     let loadText = document.getElementById('loadText');
     if (show) {
         
-        loadText.innerHTML = "Convirtiendo los lienzos a imagenes"
+        loadText.innerHTML = text
         contLoader.style.height = "100%";
         generateContainer.style.height = "70%";
         generateContainer.style.display = 'flex';
@@ -397,7 +397,7 @@ function showLoading(show) {
 export function generateImage() {
 
     ////console.log("loading...")
-    showLoading(true);
+    showLoading(true, "Generando posteos... (120s aprox.)");
     activarContador();
 
     // hacer cositas cuando esté cargando...
@@ -4404,12 +4404,18 @@ export function addPaddingIfNeeded(imageData) {
 }
 
 export async function saveImage() {
+    
     const saveImageButton = document.getElementById("save-image-button");
     saveImageButton.classList.add("disabled-button");
-    showLoading(true);
+    window.scrollTo(0, 0);
+    activarContador();
+    showLoading(true, "Convirtiendo los lienzos a imagenes... (40s aprox.)");
+    
+    
     
     try {
-        activarContador();
+        
+        
         console.log("-1")
     
         const containerInputMenu = document.getElementById("generated-container");
@@ -4423,7 +4429,7 @@ export async function saveImage() {
     
         saveImagesToBackend(modifiedImages, access_token_g)
           .then(response => {
-            console.log("2")
+            
             showLoading(false);
             detenerContador();
     
