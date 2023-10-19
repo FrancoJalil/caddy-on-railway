@@ -1,4 +1,4 @@
-import { refreshUserTokens  } from "./refreshUserTokens.js";
+import { refreshUserTokens } from "./refreshUserTokens.js";
 
 export function decodeJWTAndGetUsername(jwtToken) {
   // In a real application, use the jsonwebtoken library to decode the JWT
@@ -54,27 +54,55 @@ document.addEventListener('DOMContentLoaded', () => {
 
   cancelarBtn.addEventListener('click', function () {
     modal.style.display = 'none';
-});
+  });
 
-emailInput.addEventListener('input', (e) => {
-  let emailUserInput = e.target.value;
-  let userEmail = decodedToken.email;
-  console.log(emailUserInput);
+  emailInput.addEventListener('input', (e) => {
+    let emailUserInput = e.target.value;
+    let userEmail = decodedToken.email;
+    console.log(emailUserInput);
 
 
-  if (emailUserInput === userEmail) {
-    console.log("OK")
-    enviarBtn.classList.add('active-button-profile')
-    enviarBtn.classList.remove('disabled-button-profile')
+    if (emailUserInput === userEmail) {
+      console.log("OK")
+      enviarBtn.classList.add('active-button-profile')
+      enviarBtn.classList.remove('disabled-button-profile')
 
-  } else {
-    if (enviarBtn.classList.contains('active-button-profile')) {
-      enviarBtn.classList.add('disabled-button-profile')
-      enviarBtn.classList.remove('active-button-profile')
+    } else {
+      if (enviarBtn.classList.contains('active-button-profile')) {
+        enviarBtn.classList.add('disabled-button-profile')
+        enviarBtn.classList.remove('active-button-profile')
+      }
     }
-  }
-})
-  
+  })
+
+
+  enviarBtn.addEventListener('click', function () {
+    let access = localStorage.getItem('access');
+    // enviar data.subscriptionID al backend
+    
+    axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/cancel', {
+
+    }, {
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': 'Bearer ' + String(access)
+      }
+    })
+      .then(response => {
+        // Capturar la respuesta exitosa
+        const responseData = response.data;
+        console.log('Respuesta exitosa:', responseData);
+        
+        // REFRESCAR TOKENS ASI SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
+
+        // Aquí puedes hacer lo que necesites con los datos de la respuesta
+      })
+      .catch(error => {
+        // Capturar los errores
+        console.error('Error en la solicitud:', error);
+        // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
+      });
+  })
 
   //refreshUserTokens(); posible error? quitar coments si es así.
 
