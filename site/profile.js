@@ -103,6 +103,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
       });
       refreshUserTokens();
+      modal.style.display = 'none';
   })
 
   //refreshUserTokens(); posible error? quitar coments si es así.
