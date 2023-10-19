@@ -43,7 +43,7 @@ body {
     overflow-x: hidden;
     overflow-y: scroll;
     font-family: Inter, sans-serif;
-    background: #161616;
+    background-color: #13111C;
     color: rgba(255, 255, 255, 0.5);
     align-items: center;
     height: 100vh;
@@ -55,7 +55,7 @@ body {
 }
 
 #firstInputUser {
-    height: 76vh;
+    height: 65vh;
     padding: 1.5rem;
     display: flex;
     flex-direction: column;
