@@ -35,9 +35,9 @@
           return response.json();
         })
           .then(data => {
-            
+
             // Token verification successful, redirect to  page
-           
+
             window.location.href = "/";
           })
           .catch(error => {
@@ -49,16 +49,16 @@
     }
 
 
-    
 
 
-    
 
 
-   
 
 
-      
+
+
+
+
     /*
 
     function testAPI() {                      // Testing Graph API after login.  See statusChangeCallback() for when this call is made.
@@ -71,11 +71,11 @@
     }*/
 
     //
-    
-  
+
+
   </script>
 
-  
+
 
 </head>
 
@@ -127,21 +127,26 @@
 
 <body>
   <div class="container-login-form">
-    <h2 class="login-title">Login</h2>
-    <div id="g_id_onload" data-client_id="393246352399-e6manv1gvibqlnpba7lsu0s9ob0patgt.apps.googleusercontent.com"
-      data-context="signin" data-ux_mode="popup" data-login_uri="https://mikai.onrender.com/auth/google/"
-      data-auto_prompt="false" data-callback="onSuccess">
-    </div>
+    
 
-    <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_black" data-text="signin_with"
-      data-size="large" data-logo_alignment="left">
+    <div class="container-login-left">
+      <h2 class="login-title">Login</h2>
+      <div id="g_id_onload" data-client_id="393246352399-e6manv1gvibqlnpba7lsu0s9ob0patgt.apps.googleusercontent.com"
+        data-context="signin" data-ux_mode="popup" data-login_uri="https://mikai.onrender.com/auth/google/"
+        data-auto_prompt="false" data-callback="onSuccess">
+      </div>
+
+      <div class="g_id_signin" data-type="standard" data-shape="pill" data-theme="filled_black" data-text="signin_with"
+        data-size="large" data-logo_alignment="left">
+      </div>
+      <span class="hr"></span>
+      <form class="login-form" method="POST">
+        <input disabled type="text" id="username" placeholder="Email">
+        <input disabled type="password" id="password" placeholder="Password">
+        <button style="opacity: 0.5 !important;" type="button" class="generate-button">Login</button>
+      </form>
     </div>
-    <span class="hr"></span>
-    <form class="login-form" method="POST">
-      <input disabled type="text" id="username" placeholder="Email">
-      <input disabled  type="password" id="password" placeholder="Password">
-      <button style="opacity: 0.5 !important;" type="button" class="generate-button">Login</button>
-    </form>
+    <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697740650/assets/y_x6cofy.jpg" alt="">
   </div>
 
   <script src="https://accounts.google.com/gsi/client" async></script>

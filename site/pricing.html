@@ -11,7 +11,7 @@
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
+<body style="display: flex;">
   
   <script src="axios.js"></script>
   <script type="module" src="context.js"></script>
@@ -23,7 +23,7 @@
     .button-paypal {
       display: flex;
       justify-content: center;
-      width: 30%;
+      width: 45%;
     }
   </style>
   
@@ -38,31 +38,38 @@
     </div>
   </div>
 -->
-   <div class="extra-container" style="height: 80% !important; justify-content: space-around !important;;">
+   <div class="extra-container" style="justify-content: space-around !important;;">
             <h1>1 Plan <span class="gradient">∞</span> creadores</h1>
             <div class="bloque" style="margin: 2rem 0;">
                 <div class="content">
 
                     <div class="container-left">
-                        <h4>Membresía Premium</h4>
+                        <h4>¡El salario más bajo del mercado!</h4>
 
                         <div class="price-container">
-                            <p>$17</p>
+                            <p>$13</p>
                             <p>/mes</p>
                         </div>
 
-                        <div class="copy-container">
-                            <p>Ideal para creadores de contenido</p>
+                        <div style="width: 65%;" class="copy-container">
+                            <p style="font-size: 110%;">Ideal para creadores de contenido</p>
                             <p>
                                 Podrás aprovecharte de la inteligencia artificial y sacarle el máximo provecho,
                                 ahorrandote
                                 dinero y tiempo a la hora de crear tu contenido.
                             </p>
+
+                            
                         </div>
+                        <div class="checks" style="opacity: 0.8;">
+                          <p>- ¡500 Tokens mensuales! (+200 posts)</p>
+                          <p>- ¡Todas las funcionalidades disponibles!</p>
+                          <p>- ¡estilos originales!</p>
+                      </div>
                     </div>
 
                     <div class="container-right">
-                        <img src="/logo.png" alt="">
+                        <img style="width: 100%;" src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png" alt="">
                     </div>
 
 
@@ -70,15 +77,11 @@
 
                 </div>
                 <div class="footer-pricing">
-                    <button class="generate-button"> <a href="/login?next=pricing" style="text-decoration: none; color:aliceblue;">GET STARTED</a> </button>
-                    <div class="checks">
-                        <p>¡500 Tokens mensuales! (+200 posts)</p>
-                        <p>¡Todas las funcionalidades disponibles!</p>
-                        <p>¡estilos originales!</p>
-                    </div>
+                  <div class="button-paypal" id="paypal-button-container-P-5MC57938GY016445NMTLGJ2Y"></div>
+                    
                 </div>
             </div>
-         <div class="button-paypal" id="paypal-button-container-P-5MC57938GY016445NMTLGJ2Y"></div>
+         
         </div>
  
   <script type="module" src="./pricing/pricing.js"></script>

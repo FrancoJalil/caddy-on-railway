@@ -20,3 +20,102 @@ body {
     line-height: normal;
 }
 
+/* MEDIAS */
+
+@media screen and (max-height: 682px) {
+    #firstInputUser {
+        /*justify-content: space-between;*/
+    }
+
+    .format-title {
+        margin-bottom: 0.6rem;
+    }
+
+    .all-images img {
+        width: 150px;
+    }
+
+
+}
+
+
+
+@media screen and (max-width: 1014px) {
+
+    #firstInputUser {
+
+        justify-content: space-between;
+    }
+
+    .format-container {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .formats-container {
+        width: 80%;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container-button {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .menu li a {
+        font-size: 10px;
+    }
+
+    .logo-container {
+        margin-left: 0;
+    }
+
+    .loader {
+        top: 50%;
+    }
+}
+
+@media screen and (max-width: 1449px) {
+    .format-container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1449px) {
+    .format-container {
+        width: 60%;
+    }
+}
+
+@media screen and (max-width: 1014px) {
+
+
+    body * {
+        display: none;
+    }
+
+    .menu-border {
+        display: none;
+    }
+
+    body::before {
+        height: 100%;
+        content: "🦥Sólo disponible en PC";
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: rgb(233, 233, 233);
+        /* Color del texto */
+        margin-top: 20px;
+        /* Espacio superior para separar del contenido original */
+    }
+
+
+
+}
