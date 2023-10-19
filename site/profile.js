@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.error('Error en la solicitud:', error);
         // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
       });
+      refreshUserTokens();
   })
 
   //refreshUserTokens(); posible error? quitar coments si es así.

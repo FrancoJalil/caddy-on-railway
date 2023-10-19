@@ -12,12 +12,12 @@
 </head>
 
 <body style="display: flex;">
-  
+
   <script src="axios.js"></script>
   <script type="module" src="context.js"></script>
   <style>
     #zoid-paypal-buttons-uid_579ef7c07a_mtg6mzy6ndy {
-      width: 60% important!;
+      width: 60% important !;
     }
 
     .button-paypal {
@@ -26,8 +26,8 @@
       width: 45%;
     }
   </style>
-  
-<!--
+
+  <!--
   <div class="first-container">
     <div class="extra-container">
       <div class="content">
@@ -38,52 +38,53 @@
     </div>
   </div>
 -->
-   <div class="extra-container" style="justify-content: space-around !important;;">
-            <h1>1 Plan <span class="gradient">∞</span> creadores</h1>
-            <div class="bloque" style="margin: 2rem 0;">
-                <div class="content">
+  <div class="extra-container" style="justify-content: space-around !important;;">
+    <h1>1 Plan <span class="gradient">∞</span> creadores</h1>
+    <div class="bloque" style="margin: 2rem 0;">
+      <div class="content">
 
-                    <div class="container-left">
-                        <h4>¡El salario más bajo del mercado!</h4>
+        <div class="container-left">
+          <h4>¡El salario más bajo del mercado!</h4>
 
-                        <div class="price-container">
-                            <p>$.00</p>
-                            <p>/mes</p>
-                        </div>
+          <div class="price-container">
+            <p>$13.00</p>
+            <p>/mes</p>
+          </div>
 
-                        <div style="width: 65%;" class="copy-container">
-                            <p style="font-size: 110%;">Ideal para creadores de contenido</p>
-                            <p>
-                                Podrás aprovecharte de la inteligencia artificial y sacarle el máximo provecho,
-                                ahorrandote
-                                dinero y tiempo a la hora de crear tu contenido.
-                            </p>
-
-                            
-                        </div>
-                        <div class="checks" style="opacity: 0.8;">
-                          <p>- ¡500 Tokens mensuales! (+200 posts)</p>
-                          <p>- ¡Todas las funcionalidades disponibles!</p>
-                          <p>- ¡estilos originales!</p>
-                      </div>
-                    </div>
-
-                    <div class="container-right">
-                        <img style="width: 100%;" src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png" alt="">
-                    </div>
+          <div style="width: 65%;" class="copy-container">
+            <p style="font-size: 110%;">Ideal para creadores de contenido</p>
+            <p>
+              Podrás aprovecharte de la inteligencia artificial y sacarle el máximo provecho,
+              ahorrandote
+              dinero y tiempo a la hora de crear tu contenido.
+            </p>
 
 
-
-
-                </div>
-                <div class="footer-pricing">
-                  <div class="button-paypal" id="paypal-button-container-P-5MC57938GY016445NMTLGJ2Y"></div>
-                    
-                </div>
-            </div>
-         
+          </div>
+          <div class="checks" style="opacity: 0.8;">
+            <p>- ¡500 Tokens mensuales! (+200 posts)</p>
+            <p>- ¡Todas las funcionalidades disponibles!</p>
+            <p>- ¡estilos originales!</p>
+          </div>
         </div>
- 
+
+        <div class="container-right">
+          <img style="width: 100%;"
+            src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png" alt="">
+        </div>
+
+
+
+
+      </div>
+      <div class="footer-pricing">
+        <div class="button-paypal" id="paypal-button-container-P-5MC57938GY016445NMTLGJ2Y"></div>
+
+      </div>
+    </div>
+
+  </div>
+
   <script type="module" src="./pricing/pricing.js"></script>
 
 
@@ -108,7 +109,6 @@
       },
       onApprove: function (data, actions) {
         // You can add optional success message for the subscriber here
-        alert(data.subscriptionID);
         let access = localStorage.getItem('access');
         // enviar data.subscriptionID al backend
         axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/on-success', {
@@ -123,14 +123,17 @@
             // Capturar la respuesta exitosa
             const responseData = response.data;
             console.log('Respuesta exitosa:', responseData);
+            setTimeout(() => {
+              window.location.href = '/?member=true';
+            }, 10000); // 10000 milisegundos = 10 segundos
 
-            // Aquí puedes hacer lo que necesites con los datos de la respuesta
-          })
-          .catch(error => {
-            // Capturar los errores
-            console.error('Error en la solicitud:', error);
-            // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
-          });
+        // Aquí puedes hacer lo que necesites con los datos de la respuesta
+      })
+      .catch(error => {
+        // Capturar los errores
+        console.error('Error en la solicitud:', error);
+        // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
+      });
 
 
       }

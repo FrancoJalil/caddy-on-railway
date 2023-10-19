@@ -4,10 +4,17 @@ import { putSelectedStyle } from './chooseStyle.js';
 import { BLACK_MARK, TRANSPARENT_MARK, AUTHOR_PHRASE_1 } from "./styles.js";
 import { updateSliderValue } from "./slicingCounter.js"
 import { mostrarAlert } from "./alert.js"
+import { refreshUserTokens } from './refreshUserTokens.js';
 
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
 
+  var url = new URL(window.location.href);
+  var newMemberParam = url.searchParams.get("m");
+  if (newMemberParam === "true") {
+    // refrescamos los tokens para actualizaer el status member
+    refreshUserTokens();
+  }
   
 
   let author = true;
