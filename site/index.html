@@ -296,40 +296,6 @@
 
 
 <script>
-const textArray = ["..."];
-const textElement = document.getElementById("texto");
-let textIndex = 0;
-
-function escribirTexto() {
-    const textoActual = textArray[textIndex];
-    textElement.textContent = "Creando";
-
-    let puntoIndex = 0;
-    const interval = setInterval(function() {
-        textElement.textContent += textoActual.charAt(puntoIndex);
-        puntoIndex++;
-
-        if (puntoIndex === textoActual.length) {
-            clearInterval(interval);
-            setTimeout(borrarTexto, 500); // Tiempo de pausa antes de borrar
-        }
-    }, 100); // Velocidad de escritura de los puntos
-}
-
-function borrarTexto() {
-    const textoActual = textArray[textIndex];
-    const interval = setInterval(function() {
-        if (textElement.textContent.length > 7) {
-            textElement.textContent = "Creando";
-        } else {
-            clearInterval(interval);
-            textIndex = (textIndex + 1) % textArray.length; // Ciclo de texto
-            setTimeout(escribirTexto, 500); // Tiempo de pausa antes de volver a escribir
-        }
-    }, 50); // Velocidad de borrado
-}
-
-escribirTexto();
 
 
 

@@ -3,6 +3,7 @@ import { BLACK_MARK, TRANSPARENT_MARK, AUTHOR_PHRASE_1, SABIAS_QUE, AUTHOR_PHRAS
 import { refreshUserTokens } from "./refreshUserTokens.js";
 import { DATO_CURIOSO } from "./styles.js";
 import { activarContador, detenerContador } from "./contador.js";
+import { detenerBucle, escribirTexto } from "./loading.js"
 
 // helpers.js
 
@@ -364,12 +365,13 @@ function reloadGenerate() {
 
 // global variable, asi no se acumulan
 
-function showLoading(show, text) {
+function showLoading(show, text, typing) {
     let generateContainer = document.getElementById('loadingSkeleton');
     let contLoader = document.getElementById('contLoader');
     let loadText = document.getElementById('loadText');
     if (show) {
         
+        escribirTexto(typing);
         loadText.innerHTML = text
         contLoader.style.height = "100%";
         generateContainer.style.height = "70%";
@@ -381,7 +383,7 @@ function showLoading(show, text) {
         
     } else {
 
-        
+        detenerBucle();
         contLoader.style.height = 0;
         generateContainer.style.height = 0;
         generateContainer.style.display = 'none';
@@ -398,7 +400,7 @@ export function generateImage() {
     
 
     ////console.log("loading...")
-    showLoading(true, "Generando posteos... (120s aprox.)");
+    showLoading(true, "Generando posteos... (120s aprox.)", "Creando");
     activarContador();
 
     // hacer cositas cuando esté cargando...
@@ -813,7 +815,7 @@ export function generateImage() {
               });
 
 
-    }, 50000);
+    }, 1000);
 
 
 
@@ -4410,7 +4412,7 @@ export async function saveImage() {
     saveImageButton.classList.add("disabled-button");
     window.scrollTo(0, 0);
     activarContador();
-    showLoading(true, "Convirtiendo los lienzos a imagenes... (40s aprox.)");
+    showLoading(true, "Convirtiendo los lienzos a imagenes... (40s aprox.)", "Guardando");
     
     
     

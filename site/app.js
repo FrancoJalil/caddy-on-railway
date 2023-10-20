@@ -9,13 +9,18 @@ import { refreshUserTokens } from './refreshUserTokens.js';
 // Initialize the app
 document.addEventListener('DOMContentLoaded', () => {
 
+  
+
+  
+
+
   var url = new URL(window.location.href);
   var newMemberParam = url.searchParams.get("m");
   if (newMemberParam === "true") {
     // refrescamos los tokens para actualizaer el status member
     refreshUserTokens();
   }
-  
+
 
   let author = true;
   let listCheckboxChecked = [];
@@ -28,7 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   putSelectedStyle();
 
-  
+
 
 
   const firstForm = document.getElementById("firstInputUser");
@@ -54,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('selectable-button-author').addEventListener('click', function () {
     const button = document.getElementById('selectable-button-author');
- 
+
 
     if (button.classList.contains('selected')) {
       button.classList.remove('selected');
@@ -273,7 +278,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Verificar si el objetivo (target) es un párrafo (<p>) dentro del contenedorDinamico
 
     if (targetElement.closest('.big-container') && targetElement.tagName === 'INPUT' && targetElement.type === 'checkbox' && targetElement.className !== 'checkbox-publish') {
-     
+
       // volver opacidad normal si estaban en 0.8
       var canvasContainerOp = document.getElementById('canvasContainer');
 
@@ -333,7 +338,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!listCheckboxChecked.includes(event.target)) {
 
         listCheckboxChecked.push(event.target);
-    
+
       }
     }
   });
