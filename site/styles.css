@@ -5,6 +5,7 @@
     padding: 0;
     margin: 0;
     user-select: none;
+    font-family: monospace, sans-serif !important;
 }
 
 .contLoader {
@@ -30,19 +31,19 @@
 
 button {
     transition: 0.2s;
-    font-family: Inter, sans-serif;
+    font-family: monospace, sans-serif;
 }
 
 textarea {
     resize: none;
     padding: 1rem;
-    font-family: Inter, sans-serif;
+    font-family: monospace, sans-serif;
 }
 
 body {
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: Inter, sans-serif;
+    font-family: monospace, sans-serif;
     background-color: #13111C;
     color: rgba(255, 255, 255, 0.5);
     align-items: center;
@@ -109,6 +110,7 @@ canvas {
 ::-webkit-scrollbar-track {
     background-color: black;
 }
+
 #author-modal {
     border: 1px solid rgb(40, 40, 40);
 }
@@ -344,7 +346,7 @@ img {
 }
 
 .prompt-input {
-    
+
     margin: 0;
     margin-bottom: 0.3rem;
     width: 100%;
@@ -438,7 +440,7 @@ img {
 
 .format-title {
     font-size: 40px;
-    background-color: rgb(40,40,40);
+    background-color: rgb(40, 40, 40);
     padding: 0.5rem 1.3rem;
     border-radius: 0.4rem;
     margin-top: -1.4rem !important;
@@ -446,19 +448,19 @@ img {
     text-align: left;
     margin: 0.8rem 10rem;
     font-weight: 600;
-    font-family: Inter;
+    font-family: monospace;
     color: rgb(242 242 242);
 }
 
 .generate-button {
-    
+
     transition: 0.2s;
     border: none;
     border-radius: .25rem;
     background: rgba(149, 92, 242, 0.80);
     padding: 0.8rem 2rem;
     color: rgb(242 242 242);
-    font-family: Inter;
+    font-family: monospace;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 600;
@@ -483,7 +485,7 @@ img {
     background: rgba(149, 92, 242, 0.5);
     padding: 0.8rem 2rem;
     color: rgb(242 242 242);
-    font-family: Inter;
+    font-family: monospace;
     font-size: 0.8rem;
     font-style: normal;
     font-weight: 600;
@@ -1047,27 +1049,34 @@ input[type="range"] {
 /* LOADER */
 
 .loader {
-    width: 50px;
-    --b: 8px;
-    aspect-ratio: 1;
-    border-radius: 50%;
-    background: #514b82;
-    -webkit-mask:
-        repeating-conic-gradient(#0000 0deg, #000 1deg 70deg, #0000 71deg 90deg),
-        radial-gradient(farthest-side, #0000 calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
-    -webkit-mask-composite: destination-in;
-    mask-composite: intersect;
-    animation: l5 1s infinite;
-    order: -1;
-    left: 50%;
-    top: 40%;
+    text-align: center;
 }
 
-@keyframes l5 {
-    to {
-        transform: rotate(.5turn)
+.loader-text {
+    font-size: 24px;
+    font-weight: bold;
+    animation: loading 2s infinite steps(4, end);
+}
+
+@keyframes loading {
+
+    75% {
+        content: "Creando...";
     }
 }
 
 
 
+.maquina-de-escribir {
+    font-family: monospace;
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 1px solid rgb(242 242 242);
+    padding: 1px;
+}
+
+.puntos {
+    display: inline-block;
+    opacity: 1;
+}

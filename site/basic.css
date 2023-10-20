@@ -2,7 +2,7 @@
 body {
     overflow-x: hidden;
     overflow-y: scroll;
-    font-family: Inter, sans-serif;
+    font-family: monospace, sans-serif !important;
     background-color: #13111C;
     color: rgba(255, 255, 255, 0.5);
     align-items: center;

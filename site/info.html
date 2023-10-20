@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../styles.css">
     <link rel="stylesheet" type="text/css" href="styles-info.css">
     <link rel="stylesheet" type="text/css" href="styles-info-slider.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+    
     <title>Mikai</title>
 
 </head>
@@ -85,7 +85,7 @@
                 <p style="opacity: 0.9;">Escribe un simple prompt y ve la magía de Coralio!</p>
                 <div class="slider">
                     <div class="wrapper">
-                        <i id="left" class="fa-solid fa-angle-left"></i>
+                        <i id="left" class="fa-solid fa-angle-left"><</i>
                         <ul class="carousel">
                             <li class="card">
                                 <div class="img">
@@ -176,7 +176,7 @@
                             </li>
                             
                         </ul>
-                        <i id="right" class="fa-solid fa-angle-right"></i>
+                        <i id="right" class="fa-solid fa-angle-right">></i>
                     </div>
                 </div>
 
@@ -241,8 +241,6 @@
         const arrowBtns = document.querySelectorAll(".wrapper i");
         const carouselChildrens = [...carousel.children];
 
-        let isDragging = false, isAutoPlay = true, startX, startScrollLeft, timeoutId;
-
         // Get the number of cards that can fit in the carousel at once
         let cardPerView = 3;
 
@@ -267,25 +265,6 @@
                 carousel.scrollLeft += btn.id == "left" ? -firstCardWidth : firstCardWidth;
             });
         });
-
-        const dragStart = (e) => {
-            isDragging = true;
-            carousel.classList.add("dragging");
-            // Records the initial cursor and scroll position of the carousel
-            startX = e.pageX;
-            startScrollLeft = carousel.scrollLeft;
-        }
-
-        const dragging = (e) => {
-            if (!isDragging) return; // if isDragging is false return from here
-            // Updates the scroll position of the carousel based on the cursor movement
-            carousel.scrollLeft = startScrollLeft - (e.pageX - startX);
-        }
-
-        const dragStop = () => {
-            isDragging = false;
-            carousel.classList.remove("dragging");
-        }
 
         const infiniteScroll = () => {
             // If the carousel is at the beginning, scroll to the end
@@ -313,9 +292,6 @@
         }
         autoPlay();
 
-        carousel.addEventListener("mousedown", dragStart);
-        carousel.addEventListener("mousemove", dragging);
-        document.addEventListener("mouseup", dragStop);
         carousel.addEventListener("scroll", infiniteScroll);
         wrapper.addEventListener("mouseenter", () => clearTimeout(timeoutId));
         wrapper.addEventListener("mouseleave", autoPlay);

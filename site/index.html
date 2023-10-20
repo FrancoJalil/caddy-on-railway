@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Post Generation</title>
+  <title>AI Post Generation</title>
   <link rel="icon" type="image/x-icon"
     href="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1693523760/logo_xereu3.png">
   <link rel="stylesheet" type="text/css" href="styles.css">
@@ -66,7 +66,7 @@
         <!--
         <h3 style="font-size: 5rem; color:white; background-color: #010101; padding: 1rem; border-radius: 10rem">🦥</h3>
         -->
-        <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png" style="font-size: 5rem; color:white; padding: 1rem;">🦥
+        <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png" style="font-size: 5rem; color:white; padding: 1rem;">
         <h2 class="format-title">AI Post Generation</h2>
 
         <div class="prompt-input-container">
@@ -155,7 +155,14 @@
   <div class="contLoader" id="contLoader">
 
   <div id="loadingSkeleton" class="loading-skeleton">
-    <div id="headingElement" class="loader"></div>
+    <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697834777/assets/rial_jmgmsy.png" alt="pixel art working">
+    <div id="headingElement" class="loader">
+      <div class="loader-text">
+        <div class="maquina-de-escribir">
+          <p id="texto"></p>
+      </div>
+      </div>
+    </div>
     <p id="contador" style="margin-top: 1rem;">0.00</p>
     <p style="color: rgb(185, 185, 185)" id="loadText">(120s aprox)</p>
   </div>
@@ -289,6 +296,41 @@
 
 
 <script>
+const textArray = ["..."];
+const textElement = document.getElementById("texto");
+let textIndex = 0;
+
+function escribirTexto() {
+    const textoActual = textArray[textIndex];
+    textElement.textContent = "Creando";
+
+    let puntoIndex = 0;
+    const interval = setInterval(function() {
+        textElement.textContent += textoActual.charAt(puntoIndex);
+        puntoIndex++;
+
+        if (puntoIndex === textoActual.length) {
+            clearInterval(interval);
+            setTimeout(borrarTexto, 500); // Tiempo de pausa antes de borrar
+        }
+    }, 100); // Velocidad de escritura de los puntos
+}
+
+function borrarTexto() {
+    const textoActual = textArray[textIndex];
+    const interval = setInterval(function() {
+        if (textElement.textContent.length > 7) {
+            textElement.textContent = "Creando";
+        } else {
+            clearInterval(interval);
+            textIndex = (textIndex + 1) % textArray.length; // Ciclo de texto
+            setTimeout(escribirTexto, 500); // Tiempo de pausa antes de volver a escribir
+        }
+    }, 50); // Velocidad de borrado
+}
+
+escribirTexto();
+
 
 
 

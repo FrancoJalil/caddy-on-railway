@@ -395,6 +395,7 @@ function showLoading(show, text) {
 
 
 export function generateImage() {
+    
 
     ////console.log("loading...")
     showLoading(true, "Generando posteos... (120s aprox.)");
@@ -812,7 +813,7 @@ export function generateImage() {
               });
 
 
-    }, 1000);
+    }, 50000);
 
 
 
