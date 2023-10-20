@@ -81,18 +81,17 @@ body {
 
 @media screen and (max-width: 1449px) {
     .format-container {
-        width: 60%;
+        width: 65%;
     }
 }
 
-@media screen and (max-width: 1449px) {
+@media screen and (max-width: 1280px) {
     .format-container {
-        width: 60%;
+        width: 75%;
     }
 }
 
 @media screen and (max-width: 1014px) {
-
 
     body * {
         display: none;
