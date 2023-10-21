@@ -16,8 +16,35 @@ export function refreshUserTokens() {
             if (!userTokens) {
               userTokens = 0;
             }
-            tokensElement.textContent = userTokens
+
+            tokensElement.textContent = userTokens;
         
 
         });
+}
+
+export function getUserStatus() {
+ 
+  let accessToken = localStorage.getItem('access');
+
+  const statusElement = document.getElementById('status');
+
+  axios.get('https://mikai-production.up.railway.app/get-user-status/', {
+  headers: {
+    'Authorization': 'Bearer ' + String(accessToken)
+  }
+  })
+      .then(response => {
+
+          let userStatus = response.data.user_status;
+          statusElement.textContent = userStatus;
+          if (userStatus === "member") {
+            console.log("f")
+            cancelarSuscripcion.style.display = "flex";
+          } else if (userStatus === "free") {
+            cancelarSuscripcion.style.display = "none";
+          }
+          return userStatus;
+      
+      });
 }

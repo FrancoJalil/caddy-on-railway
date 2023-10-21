@@ -1,4 +1,4 @@
-import { refreshUserTokens } from "./refreshUserTokens.js";
+import { getUserStatus, refreshUserTokens } from "./refreshUserTokens.js";
 
 export function decodeJWTAndGetUsername(jwtToken) {
   // In a real application, use the jsonwebtoken library to decode the JWT
@@ -29,18 +29,16 @@ document.addEventListener('DOMContentLoaded', () => {
   const photoElementP = document.getElementById('profilePhoto');
   const emailElement = document.getElementById('email');
   const emailInput = document.getElementById('emailInput');
-  const statusElement = document.getElementById('status');
   const modal = document.getElementById('modal-profile');
   const cancelarBtn = document.getElementById('cancelarBtn');
   const enviarBtn = document.getElementById('enviarBtn');
 
-  if (decodedToken.status === "free") {
-    cancelarSuscripcion.style.display = "none";
-  } else {
-    cancelarSuscripcion.style.display = "block";
-  }
+  let userStatus = getUserStatus();
+  
+  console.log(userStatus)
+  
+  
 
-  statusElement.textContent = decodedToken.status;
   emailElement.textContent = decodedToken.email;
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"
   photoElementP.src = decodedToken.picture;
@@ -87,7 +85,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // enviar data.subscriptionID al backend
     
     axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/cancel', {
-
+      subscriptionID: "hola"
     }, {
       headers: {
         'Content-Type': 'application/json',
@@ -96,7 +94,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
       .then(response => {
         // Capturar la respuesta exitosa
-        const responseData = response.data;
+        const responseData = response;
         console.log('Respuesta exitosa:', responseData);
         
         // REFRESCAR TOKENS ASI SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
@@ -105,11 +103,19 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch(error => {
         // Capturar los errores
+        refreshUserTokens();
         console.error('Error en la solicitud:', error);
         // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
       });
-      refreshUserTokens();
-      modal.style.display = 'none';
+      //localStorage.setItem('status', 'free');
+
+      // time out 30s?
+      
+      //  modal.style.display = 'none';
+      //  location.reload(true);
+      
+      
+
   })
 
   //refreshUserTokens(); posible error? quitar coments si es así.

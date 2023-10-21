@@ -174,7 +174,7 @@ h1 {
     background-color: #b62a2a !important;
 }
 
-#cancelarSuscripcion {
+#cancelarSuscripcion:hover {
     opacity: 1 !important;
     background-color: #b62a2a !important;
 }

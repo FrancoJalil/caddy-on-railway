@@ -24,9 +24,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   var url = new URL(window.location.href);
-  var newMemberParam = url.searchParams.get("m");
+  var newMemberParam = url.searchParams.get("member");
   if (newMemberParam === "true") {
     // refrescamos los tokens para actualizaer el status member
+    console.log("member_True")
     refreshUserTokens();
   }
 

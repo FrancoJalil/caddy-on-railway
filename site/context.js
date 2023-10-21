@@ -30,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"
   photoElement.src = decodedToken.picture;
+
+ 
   
 
   
