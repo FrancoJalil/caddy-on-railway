@@ -36,8 +36,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let userStatus = getUserStatus();
   
   console.log(userStatus)
-  
-  
 
   emailElement.textContent = decodedToken.email;
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"
