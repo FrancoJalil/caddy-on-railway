@@ -96,6 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
         // Capturar la respuesta exitosa
         const responseData = response;
         console.log('Respuesta exitosa:', responseData);
+
+        location.reload(true);
+
         
         // REFRESCAR TOKENS ASI SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
 
@@ -111,8 +114,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       // time out 30s?
       
-      //  modal.style.display = 'none';
-      //  location.reload(true);
+        
       
       
 
