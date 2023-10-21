@@ -1,4 +1,4 @@
-import { getUserStatus, refreshUserTokens } from "./refreshUserTokens.js";
+import { getNextBillingTime, getUserStatus, refreshUserTokens } from "./refreshUserTokens.js";
 
 export function decodeJWTAndGetUsername(jwtToken) {
   // In a real application, use the jsonwebtoken library to decode the JWT
@@ -33,9 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
   const cancelarBtn = document.getElementById('cancelarBtn');
   const enviarBtn = document.getElementById('enviarBtn');
 
-  let userStatus = getUserStatus();
+  getUserStatus();
+  getNextBillingTime();
   
-  console.log(userStatus)
 
   emailElement.textContent = decodedToken.email;
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"
