@@ -34,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
   const cancelarBtn = document.getElementById('cancelarBtn');
   const enviarBtn = document.getElementById('enviarBtn');
 
+  if (decodedToken.status === "free") {
+    cancelarSuscripcion.style.display = "none";
+  } else {
+    cancelarSuscripcion.style.display = "block";
+  }
+
   statusElement.textContent = decodedToken.status;
   emailElement.textContent = decodedToken.email;
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"

@@ -8,6 +8,7 @@
     font-family: monospace, sans-serif !important;
 }
 
+
 .contLoader {
     height: 0;
 }
@@ -443,7 +444,7 @@ img {
     background-color: rgb(40, 40, 40);
     padding: 0.5rem 1.3rem;
     border-radius: 0.4rem;
-    margin-top: -1.4rem !important;
+    margin-top: -0.5rem !important;
     width: max-content;
     text-align: left;
     margin: 0.8rem 10rem;
@@ -765,8 +766,8 @@ button.cancel:hover {
 
 /* format menu */
 .formats-container {
+    display: none;
     width: 100%;
-    display: flex;
     flex-direction: column !important;
     /*max-width: 80%;
     min-width: 60%;*/
@@ -838,7 +839,8 @@ button.cancel:hover {
     justify-content: space-between;
     text-align: left;
     padding: 1rem;
-
+    border: 1px solid rgb(40, 40, 40);
+    border-bottom: none;
 }
 
 .format-button {
@@ -908,6 +910,8 @@ button.cancel:hover {
     justify-content: center;
     padding: 0.4rem 1rem;
     background-color: #010101;
+    border: 1px solid rgb(40, 40, 40);
+    border-top: none;
 }
 
 .slider-container button {

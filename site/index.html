@@ -11,8 +11,10 @@
   <link rel="stylesheet" type="text/css" href="basic.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Inter:wght@600&family=League+Gothic&family=Lora&family=Montserrat:wght@500&family=Poppins:ital,wght@0,300;1,200&family=Rock+Salt&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Inter:wght@600&family=League+Gothic&family=Lora&family=Montserrat:wght@500&family=Poppins:ital,wght@0,300;1,200&family=Rock+Salt&display=swap"
+    rel="stylesheet">
 
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
@@ -66,15 +68,17 @@
         <!--
         <h3 style="font-size: 5rem; color:white; background-color: #010101; padding: 1rem; border-radius: 10rem">🦥</h3>
         -->
-        <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png" style="font-size: 5rem; color:white; padding: 1rem;">
+        <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697738307/assets/a_wuubul.png"
+          style="font-size: 5rem; color:white; padding: 1rem;">
         <h2 class="format-title">AI Post Generation</h2>
 
         <div class="prompt-input-container">
           <input type="text" autocomplete="off" autofocus name="prompt-input" class="prompt-input" id="prompt-input"
             placeholder="Type a prompt... // Ej: Segunda guerra mundial">
+          <button id="configPrompt" type="button" style="left: 71.75%;top: 48.7%;position: absolute;">X</button>
         </div>
 
-        <div class="formats-container">
+        <div class="formats-container" id="formats-containerID">
           <div class="style-container">
             <h4 id="titleStyleGenerate"></h4>
             <div class="images-container">
@@ -154,20 +158,21 @@
 
   <div class="contLoader" id="contLoader">
 
-  <div id="loadingSkeleton" class="loading-skeleton">
-    <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697834777/assets/rial_jmgmsy.png" alt="pixel art working">
-    <div id="headingElement" class="loader">
-      <div class="loader-text">
-        <div class="maquina-de-escribir">
-          <p id="texto"></p>
+    <div id="loadingSkeleton" class="loading-skeleton">
+      <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697834777/assets/rial_jmgmsy.png"
+        alt="pixel art working">
+      <div id="headingElement" class="loader">
+        <div class="loader-text">
+          <div class="maquina-de-escribir">
+            <p id="texto"></p>
+          </div>
+        </div>
       </div>
-      </div>
+      <p id="contador" style="margin-top: 1rem;">0.00</p>
+      <p style="color: rgb(185, 185, 185)" id="loadText">(120s aprox)</p>
     </div>
-    <p id="contador" style="margin-top: 1rem;">0.00</p>
-    <p style="color: rgb(185, 185, 185)" id="loadText">(120s aprox)</p>
-  </div>
 
-</div>
+  </div>
 
   <div id="generated-container">
 
@@ -266,7 +271,7 @@
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/4.5.0/fabric.min.js"></script>
 
-  
+
 
   <script>
     // Obtenemos la URL actual

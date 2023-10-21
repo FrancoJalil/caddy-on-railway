@@ -160,9 +160,21 @@ h1 {
     background-color: #ff3b3b !important;
 }
 
+
 #cancelarSuscripcion {
+    display: none;
     background: #ff0000;
     color: #fff;
     border: none;
     border-radius: 5px;
+}
+
+#logoutButton:hover {
+    opacity: 1 !important;
+    background-color: #b62a2a !important;
+}
+
+#cancelarSuscripcion {
+    opacity: 1 !important;
+    background-color: #b62a2a !important;
 }

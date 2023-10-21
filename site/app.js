@@ -10,6 +10,15 @@ import { refreshUserTokens } from './refreshUserTokens.js';
 document.addEventListener('DOMContentLoaded', () => {
 
   
+  document.getElementById('configPrompt').addEventListener('click', function () {
+    let formatContainerId = document.getElementById('formats-containerID');
+    
+    if (formatContainerId.style.display == 'none' || formatContainerId.style.display === '') {
+      formatContainerId.style.display = 'flex';
+    } else {
+      formatContainerId.style.display = 'none';
+    }
+  } )
 
   
 
