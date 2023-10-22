@@ -103,7 +103,12 @@ body {
 
     body::before {
         height: 100%;
-        content: "🦥Sólo disponible en PC";
+        background-image: url('https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697929908/assets/tea3_jopswv.jpg');
+        background-size: 10rem;
+        background-position: top;
+        display: flex;
+        background-repeat: no-repeat;
+        content: "Sólo disponible en PC";
         display: flex;
         text-align: center;
         justify-content: center;
@@ -111,7 +116,8 @@ body {
         font-size: 24px;
         color: rgb(233, 233, 233);
         /* Color del texto */
-        margin-top: 20px;
+        margin-top: 10%;
+        padding-top: -30%;
         /* Espacio superior para separar del contenido original */
     }
 
