@@ -1,5 +1,5 @@
 // app.js
-import { isSelectedCanvas, confirmAction, closeConfirmationModal, showConfirmationModalEdition, generateImage, deselectableAllCanvas, reactivarCanvas, toggleClickedStyle, saveImage, showConfirmationModal, deleteCanvas, modoEdicion, addPaddingIfNeeded, toggleBorder, toggleBold, addText, changeTextColor, changeTextFont, deleteText, selectAllCanvas } from './helpers.js';
+import { downloadAll, isSelectedCanvas, confirmAction, closeConfirmationModal, showConfirmationModalEdition, generateImage, deselectableAllCanvas, reactivarCanvas, toggleClickedStyle, saveImage, showConfirmationModal, deleteCanvas, modoEdicion, addPaddingIfNeeded, toggleBorder, toggleBold, addText, changeTextColor, changeTextFont, deleteText, selectAllCanvas } from './helpers.js';
 import { putSelectedStyle } from './chooseStyle.js';
 import { BLACK_MARK, TRANSPARENT_MARK, AUTHOR_PHRASE_1 } from "./styles.js";
 import { updateSliderValue } from "./slicingCounter.js"
@@ -146,6 +146,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Event Listener para el botón "Publicar"
   document.getElementById('save-image-button').addEventListener('click', saveImage);
+
+  // Event listener para el boton "download all" de index
+  document.getElementById('downloadAll').addEventListener('click', async function () {
+
+    var downloadButton = document.getElementById("downloadAll");
+    var buttonContent = document.getElementById("buttonContent");
+    var loader = document.getElementById("loaderButton");
+
+    buttonContent.style.display = "none";
+    loader.style.display = "block";
+
+    await downloadAll();
+
+    loader.style.display = "none";
+    buttonContent.style.display = "flex";
+  })
 
   // Event Listener para el botón "Agregar Texto"
   document.getElementById('add-text-button').addEventListener('click', addText);

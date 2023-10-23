@@ -11,11 +11,10 @@
   <link rel="stylesheet" type="text/css" href="basic.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Inter:wght@600&family=League+Gothic&family=Lora&family=Montserrat:wght@500&family=Poppins:ital,wght@0,300;1,200&family=Rock+Salt&display=swap"
-    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Anton&family=Inter:wght@600&family=League+Gothic&family=Lora&family=Montserrat:wght@500&family=Poppins:ital,wght@0,300;1,200&family=Rock+Salt&display=swap" rel="stylesheet">
 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.5/jszip.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
 </head>
@@ -186,6 +185,14 @@
       <div id="container-buttons-generated">
         <button id="modo-edicion-button" class="other-buttons">Modo Edición</button>
         <button id='save-image-button' class="other-buttons">Guardar</button>
+        <button id='downloadAll' class="other-buttons">
+          <div id="buttonContent" style="display: flex; flex-direction: row; align-items: center; justify-content: center;">
+          <img style="width: 15px; padding-right: 5px;" src="https://img.icons8.com/material-rounded/24/FFFFFF/download--v1.png">  Download All
+        </div>
+        <div style="display: none;" id="loaderButton">
+
+        </div>
+        </button>
       </div>
     </div>
 
@@ -222,10 +229,10 @@
   <div class="footer" id="footer" style="display: none;"></div>
   <!-- Load fonts -->
   <span style="visibility: hidden;">
-    <span style="font-family: 'League Gothic', sans-serif; font-size: 1px;">Mikai</span>
-    <span style="font-family: 'Inter', sans-serif; font-size: 1px;">Mikai</span>
-    <span style="font-family: 'Poppins', sans-serif; font-size: 1px;">Mikai</span>
-    <span style="font-family: 'Lora', serif; font-size: 1px;">Lora</span>
+    <p style="font-family: League Gothic">Mikai</p>
+    <span style="font-family: 'Inter', sans-serif">Mikai</span>
+    <span style="font-family: 'Poppins', sans-serif; ">Mikai</span>
+    <span style="font-family: 'Lora', sans-serif; ">Lora</span>
   </span>
 
 

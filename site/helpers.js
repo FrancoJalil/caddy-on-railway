@@ -370,7 +370,7 @@ function showLoading(show, text, typing) {
     let contLoader = document.getElementById('contLoader');
     let loadText = document.getElementById('loadText');
     if (show) {
-        
+
         escribirTexto(typing);
         loadText.innerHTML = text
         contLoader.style.height = "100%";
@@ -379,8 +379,8 @@ function showLoading(show, text, typing) {
         // Set the text content of the h1 element
         // Add the h1 element as a child to the generatedContainer
 
-        
-        
+
+
     } else {
 
         detenerBucle();
@@ -390,14 +390,14 @@ function showLoading(show, text, typing) {
         // poner el menu abajo
         let menuCanvas = document.getElementById('menu-canvas');
         menuCanvas.style.display = 'flex';
-        
+
     }
 }
 
 
 
 export function generateImage() {
-    
+
 
     ////console.log("loading...")
     showLoading(true, "Generando posteos... (120s aprox.)", "Creando");
@@ -410,13 +410,13 @@ export function generateImage() {
     containerInputMenu.style.display = 'none';
 
     // LOADING SKELETON
-    
-    window.onbeforeunload = function() {
+
+    window.onbeforeunload = function () {
         return "Seguro que quieres salir? Los cambios no se guardarán";
     };
-    
+
     setTimeout(() => {
-        
+
         ////console.log("loaded")
 
         authorName = document.getElementById('authorName');
@@ -442,7 +442,7 @@ export function generateImage() {
         let format = selectedStyle.title;
         let type = selectedStyle.type;
 
-        
+
 
         let access_token_g = localStorage.getItem('access');
 
@@ -468,30 +468,30 @@ export function generateImage() {
             .then(response => {
 
                 if (response.status === 200) {
-                    
+
 
                     // Si el estado de la respuesta es 200, continúa con el programa
                     ////console.log("ok!");
                     refreshUserTokens();
                 } else if (response.statusText === 'Unauthorized') {
-                
+
                     //logoutUser();
                     ////console.log("Unauthorized")
                 }
                 else {
-                 
+
                     // Si el estado no es 200, muestra un mensaje de error o realiza alguna acción adecuada
                     window.location.href = "/?err=01";
                     ////console.log("err")
                 }
 
                 // SACAR LOADING SKELETON
-                
+
                 showLoading(false);
                 detenerContador();
-                
+
                 const data = response.data;
-                
+
                 //console.log("BIGDATA", data);
 
                 // SABER CUANTOS CARRUS SON Y AGREGARLO A "PUBLICAR (4)"
@@ -514,7 +514,7 @@ export function generateImage() {
 
                     imgElement.onload = function () {
                         let contadorIndex = 0;
-                        
+
                         let current_image = data.image_generated[contadorReal].image
 
                         let canvasContainer = document.getElementById('canvasContainer');
@@ -543,7 +543,7 @@ export function generateImage() {
                         // Agrega el texto que deseas mostrar en el label
                         labelElement.innerText = 'Select this carrousel';
 
-                        
+
 
 
                         let descriptionTitle = document.createElement('P');
@@ -589,7 +589,7 @@ export function generateImage() {
 
                         ////console.log("INDEX_", index);
                         ////console.log("CONTADOR_", contador);
-                        let idea_actual = "idea" + (contadorReal+1);// index + 1 (SOLO)
+                        let idea_actual = "idea" + (contadorReal + 1);// index + 1 (SOLO)
                         contadorIndex++;
                         ////console.log("PEPE PIO")
                         ////console.log("IDEA", idea_actual)
@@ -618,7 +618,7 @@ export function generateImage() {
                             }
                             image_description = event.target.value;
                             imagesDataFront[contadorReal].image_description = image_description;
-                        
+
                         });
 
                         let canvasDiv = document.createElement('div');
@@ -639,7 +639,7 @@ export function generateImage() {
                         containerDesc.appendChild(textField);
 
                         containerDesc.appendChild(descriptionTitle);
-                        
+
 
                         // date time
                         let containerDatetime = document.createElement('div');
@@ -709,7 +709,7 @@ export function generateImage() {
                             allCanvas.push(canvasFirst)
                             canvases.push(canvasData);
                             canvasDataWithCanvasFirst.push(canvasData)
-                            
+
                         }
 
 
@@ -726,7 +726,7 @@ export function generateImage() {
 
                         // Condicional que permite que no haya mas de 4 / 5 imagen por carrusel // ANTI BUG
                         if (true) { // JEJE
-                            
+
                             if (selectedStyle.type !== 'Solo') {
 
                                 //var idea = "idea" + (j + 1)
@@ -799,7 +799,7 @@ export function generateImage() {
 
 
                             }
-                        }contadorReal++;
+                        } contadorReal++;
                     };
 
 
@@ -812,14 +812,14 @@ export function generateImage() {
                 console.error('Error en la solicitud: ' + error.message);
                 // Realiza alguna acción adecuada en caso de error, como redirigir o mostrar un mensaje de error
                 window.location.href = "/?err=01";
-              });
+            });
 
 
     }, 1000);
 
 
 
-    
+
 
 
 }
@@ -877,7 +877,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                         // Configurar la imagen
                         //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                         //imgX.scale(0.5);
-                        
+
                         imgX.set({
                             left: 458,
                             top: 106,
@@ -1477,7 +1477,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                         // Configurar la imagen
                         //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                         //imgX.scale(0.5);
-                        
+
                         imgX.set({
                             left: 220,
                             top: 200,
@@ -2295,7 +2295,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                         // Configurar la imagen
                         //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                         //imgX.scale(0.5);
-                        
+
                         imgX.set({
                             left: 900,
                             top: 900,
@@ -2836,7 +2836,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                         // Configurar la imagen
                         //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                         //imgX.scale(0.5);
-                        
+
                         imgX.set({
                             left: 900,
                             top: 900,
@@ -2845,7 +2845,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                         });
 
                         var imageSize = imgX.getScaledWidth();
-                imgX.scaleToWidth(110);
+                        imgX.scaleToWidth(110);
 
                         // Crear un círculo de recorte
                         var clipPath = new fabric.Circle({
@@ -3441,7 +3441,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                 // Configurar la imagen
                 //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                 //imgX.scale(0.5);
-                
+
                 imgX.set({
                     left: 440,
                     top: 895,
@@ -3611,7 +3611,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                 // Configurar la imagen
                 //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                 //imgX.scale(0.5);
-                
+
                 imgX.set({
                     left: 800,
                     top: 930,
@@ -3883,7 +3883,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
                 // Configurar la imagen
                 //imgX.scaleToWidth(80); // Ajustar el ancho de la imagen
                 //imgX.scale(0.5);
-                
+
                 imgX.set({
                     left: 440,
                     top: 895,
@@ -4406,49 +4406,100 @@ export function addPaddingIfNeeded(imageData) {
     return imageData;
 }
 
-export async function saveImage() {
+export async function downloadAll() {
+    // publish true eh 
+
     
+
+    const zip = new JSZip();
+    console.log(imagesDataFront)
+    console.log(imagesDataFront[0])
+    console.log(imagesDataFront[0].image_description)
+    
+
+    await Promise.all(canvases.map(async (canvasData) => {
+
+        let folderName = canvasData.num_carrusel
+        let folder = zip.folder(folderName)
+
+        let pureCanva = canvasData.canvas;
+        //const dataURL = pureCanva.toDataURL("image/png");
+
+        const dataURL = await new Promise((resolve) => {
+            setTimeout(() => {
+                const dataURL = pureCanva.toDataURL("image/png");
+                //const base64Image = dataURL.split(";base64,")[1];
+                resolve(dataURL);
+            }, 1000); // Ejemplo de tiempo de espera de 1 segundo (ajusta según sea necesario)
+        });
+
+        const base64Image = dataURL.split(";base64,")[1];
+
+        // Verifica si ya existe un archivo TXT en la carpeta
+        if (!folder.file("Description.txt")) {
+            // Si no existe, agrégalo
+            folder.file("Description.txt", imagesDataFront[canvasData.num_carrusel.match(/\d+$/)[0]].image_description);
+        }
+
+        folder.file(`imagen${canvasData.image_position + 1}.png`, base64Image, { base64: true });
+    }));
+
+
+
+
+    // Generar el archivo comprimido
+    zip.generateAsync({ type: "blob" }).then(function (content) {
+        // Crear un enlace de descarga para el archivo comprimido
+        const enlaceDescarga = document.createElement("a");
+        enlaceDescarga.href = URL.createObjectURL(content);
+        enlaceDescarga.download = "imagenes.zip"; // Nombre del archivo comprimido
+        enlaceDescarga.click();
+    });
+}
+
+export async function saveImage() {
+
     const saveImageButton = document.getElementById("save-image-button");
     saveImageButton.classList.add("disabled-button");
     window.scrollTo(0, 0);
     activarContador();
     showLoading(true, "Convirtiendo los lienzos a imagenes... (40s aprox.)", "Guardando");
-    
-    
-    
+
+
+
     try {
-        
-        
+
+
         console.log("-1")
-    
+
         const containerInputMenu = document.getElementById("generated-container");
         containerInputMenu.style.display = 'none';
         console.log("0")
-    
+
         const modifiedImages = await generateModifiedImages();
         console.log("1")
-    
+
         const access_token_g = localStorage.getItem('access');
-    
+
         saveImagesToBackend(modifiedImages, access_token_g)
-          .then(response => {
-            
-            showLoading(false);
-            detenerContador();
-    
-            if (response.success) {
-              window.onbeforeunload = null;
-              window.location.href = "/my-generations";
-            } else {
-              handleSaveError(response.errorCode);
-            }
-          })
-          .catch(error => {
-            console.error("Error en saveImagesToBackend:", error);
-            // Maneja el error de la promesa aquí
-    
-            // Puedes usar try...catch aquí si es necesario
-          });
+            .then(response => {
+
+                showLoading(false);
+                detenerContador();
+
+                if (response.success) {
+                    window.onbeforeunload = null;
+                    window.location.href = "/my-generations";
+                } else {
+                    handleSaveError(response.errorCode);
+                }
+            })
+            .catch(error => {
+                console.error("Error en saveImagesToBackend:", error);
+                // Maneja el error de la promesa aquí
+
+                // Puedes usar try...catch aquí si es necesario
+            });
 
 
     } catch (error) {
@@ -4497,12 +4548,12 @@ function saveImagesToBackend(modifiedImages, access_token_g) {
                 'Authorization': 'Bearer ' + String(access_token_g)
             }
         })
-        .then(response => {
-            resolve({ success: true, data: response.data });
-        })
-        .catch(error => {
-            reject({ success: false, errorCode: error.response ? error.response.status : null });
-        });
+            .then(response => {
+                resolve({ success: true, data: response.data });
+            })
+            .catch(error => {
+                reject({ success: false, errorCode: error.response ? error.response.status : null });
+            });
     });
 }
 

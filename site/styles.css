@@ -5,9 +5,12 @@
     padding: 0;
     margin: 0;
     user-select: none;
-    font-family: monospace, sans-serif !important;
+    font-family: monospace, sans-serif;
 }
 
+h2 {
+    font-family: monospace !important;
+}
 
 .contLoader {
     height: 0;
@@ -501,11 +504,14 @@ img {
 }
 
 #container-buttons-generated {
+    display: flex;
 
     margin: 1rem;
 }
 
 #container-buttons-generated button {
+    width: 168.45px;
+    height: 40.59px;
     margin: 1rem;
 }
 
@@ -1051,6 +1057,24 @@ input[type="range"] {
 
 
 /* LOADER */
+
+#loaderButton {
+    margin: auto;
+    border: 3px solid #EAF0F6;
+    border-radius: 50%;
+    border-top: 3px solid #4d91ff;
+    width: 10px;
+    height: 10px;
+    animation: spinner 1s linear infinite;
+  }
+  
+  @keyframes spinner {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+
+  /* */
 
 .loader {
     text-align: center;

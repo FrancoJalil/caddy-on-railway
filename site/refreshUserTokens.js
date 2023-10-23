@@ -73,6 +73,9 @@ export function getNextBillingTime() {
 
     }).catch(error => {
       console.log(error)
+      let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
+      let nextTimeBilling = '∞/∞/∞'
+      nextTimeBillingHTML.textContent = nextTimeBilling
     });
   // 404 es porq el user está canceled
 }
