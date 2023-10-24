@@ -60,7 +60,7 @@ export function getNextBillingTime() {
   })
     .then(response => {
 
-      if (response.ok) {
+      if (false) {
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = response.data.next_billing_time;
       const fecha = new Date(nextTimeBilling);
@@ -72,7 +72,7 @@ export function getNextBillingTime() {
       nextTimeBillingHTML.textContent = fechaFormateada;
       return
     }
-    console.log(response)
+    //console.log(response)
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = '∞/∞/∞'
       nextTimeBillingHTML.textContent = nextTimeBilling
@@ -80,10 +80,12 @@ export function getNextBillingTime() {
 
 
     }).catch(error => {
+      console.log("X")
       console.log(error)
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = '∞/∞/∞'
       nextTimeBillingHTML.textContent = nextTimeBilling
+      return
     });
   // 404 es porq el user está canceled
 }
