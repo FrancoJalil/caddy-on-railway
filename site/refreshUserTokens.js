@@ -59,6 +59,8 @@ export function getNextBillingTime() {
     }
   })
     .then(response => {
+
+      if (response.success) {
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = response.data.next_billing_time;
       const fecha = new Date(nextTimeBilling);
@@ -68,7 +70,13 @@ export function getNextBillingTime() {
 
       const fechaFormateada = `${dia}/${mes}/${año}`;
       nextTimeBillingHTML.textContent = fechaFormateada;
-
+      return
+    }
+    console.log(response)
+      let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
+      let nextTimeBilling = '∞/∞/∞'
+      nextTimeBillingHTML.textContent = nextTimeBilling
+      return
 
 
     }).catch(error => {
