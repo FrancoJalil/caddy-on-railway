@@ -5,7 +5,7 @@ export function refreshUserTokens() {
   let accessTokenX = localStorage.getItem('access');
 
   const tokensElement = document.getElementById('tokens');
-  axios.get('https://mikai-production.up.railway.app/get-user-tokens/', {
+  axios.get('https://api.corailo.com/get-user-tokens/', {
     headers: {
       'Authorization': 'Bearer ' + String(accessTokenX)
     }
@@ -29,7 +29,7 @@ export function getUserStatus() {
 
   const statusElement = document.getElementById('status');
 
-  axios.get('https://mikai-production.up.railway.app/get-user-status/', {
+  axios.get('https://api.corailo.com/get-user-status/', {
     headers: {
       'Authorization': 'Bearer ' + String(accessToken)
     }
@@ -53,7 +53,7 @@ export function getNextBillingTime() {
 
   let accessToken = localStorage.getItem('access');
 
-  axios.get('https://mikai-production.up.railway.app/payments/paypal/subscription/get-next-billing-time', {
+  axios.get('https://api.corailo.com/payments/paypal/subscription/get-next-billing-time', {
     headers: {
       'Authorization': 'Bearer ' + String(accessToken)
     }

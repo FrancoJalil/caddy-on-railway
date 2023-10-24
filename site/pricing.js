@@ -16,7 +16,7 @@ function ifNotPremium() {
   let refresh_token = localStorage.getItem('refresh');
 
   if (access_token) {
-    const url = 'https://mikai-production.up.railway.app/api/token/verify/'
+    const url = 'https://api.corailo.com/api/token/verify/'
     fetch(url, {
       method: 'POST',
       headers: {
@@ -49,7 +49,7 @@ function ifNotPremium() {
 function purchase() {
   
   // api paypal
-  axios.get('https://mikai-production.up.railway.app/payments/paypal/subscription')
+  axios.get('https://api.corailo.com/payments/paypal/subscription')
     .then(response => {
       // Capturar la respuesta exitosa
       const responseData = response.data;

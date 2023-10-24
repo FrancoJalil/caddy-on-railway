@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   function loadPage(page) {
-    axios.get('https://mikai-production.up.railway.app/image-generation/get_saved_images', {
+    axios.get('https://api.corailo.com/image-generation/get_saved_images', {
       headers: {
         'Authorization': 'Bearer ' + String(access_token_g)
       },

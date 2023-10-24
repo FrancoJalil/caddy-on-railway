@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let access = localStorage.getItem('access');
     // enviar data.subscriptionID al backend
     
-    axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/cancel', {
+    axios.post('https://api.corailo.com/payments/paypal/subscription/cancel', {
       subscriptionID: "hola"
     }, {
       headers: {

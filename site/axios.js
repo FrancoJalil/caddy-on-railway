@@ -1,5 +1,5 @@
 
-const refreshTokenEndpoint = 'https://mikai-production.up.railway.app/api/token/refresh/';
+const refreshTokenEndpoint = 'https://api.corailo.com/api/token/refresh/';
 let accessToken = localStorage.getItem('access');
 let refreshToken = localStorage.getItem('refresh');
 
