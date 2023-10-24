@@ -60,7 +60,7 @@ export function getNextBillingTime() {
   })
     .then(response => {
 
-      if (response.success) {
+      if (response.ok) {
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = response.data.next_billing_time;
       const fecha = new Date(nextTimeBilling);
