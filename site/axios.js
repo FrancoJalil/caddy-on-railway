@@ -5,10 +5,10 @@ let refreshToken = localStorage.getItem('refresh');
 
 
 async function logoutUser() {
-  //localStorage.removeItem('access')
-  //localStorage.removeItem('refresh')
+  localStorage.removeItem('access')
+  localStorage.removeItem('refresh')
   // Redireccionar a otra página
-  //window.location.href = "/login";
+window.location.href = "/login";
 
 }
 
