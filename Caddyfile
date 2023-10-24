@@ -5,14 +5,7 @@ file_server {
   hide 404.html
 }
 
-www.corailo.com {
-    redir https://corailo.com{uri}
-}
 
-corailo.com {
-    root * /var/www/corailo.com
-    file_server
-}
 
 handle_errors {
         @404 {
