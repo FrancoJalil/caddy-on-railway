@@ -609,6 +609,12 @@ export function generateImage() {
                         textField.value = image_description; // Establecer el contenido del campo de texto
 
                         textField.addEventListener('input', function (event) {
+
+                            // OBTENEMOS EL ID DEL CONTAINER
+                            let containerDiv = textField.closest('.big-container');
+                            let carruselNumber = +containerDiv.id.match(/\d+$/)[0];
+
+
                             const maxLength = 500;
                             const currentLength = event.target.value.length;
 
@@ -617,8 +623,8 @@ export function generateImage() {
                                 event.target.value = event.target.value.slice(0, maxLength);
                             }
                             image_description = event.target.value;
-                            imagesDataFront[contadorReal].image_description = image_description;
-
+                            imagesDataFront[carruselNumber].image_description = image_description;
+                            
                         });
 
                         let canvasDiv = document.createElement('div');
