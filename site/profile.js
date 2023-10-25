@@ -78,46 +78,38 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
 
-  enviarBtn.addEventListener('click', function () {
+  enviarBtn.addEventListener('click', async function () {
     let access = localStorage.getItem('access');
-    // enviar data.subscriptionID al backend
     
-    axios.post('https://api.corailo.com/payments/paypal/subscription/cancel', {
-      subscriptionID: "hola"
-    }, {
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': 'Bearer ' + String(access)
-      }
-    })
-      .then(response => {
-        // Capturar la respuesta exitosa
-        const responseData = response;
-        console.log('Respuesta exitosa:', responseData);
-
-        location.reload(true);
-
-        
-        // REFRESCAR TOKENS ASI SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
-
-        // Aquí puedes hacer lo que necesites con los datos de la respuesta
-      })
-      .catch(error => {
-        // Capturar los errores
-        refreshUserTokens();
-        console.error('Error en la solicitud:', error);
-        // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
+    try {
+      const response = await axios.post('https://api.corailo.com/payments/paypal/subscription/cancel', {
+        subscriptionID: "hola"
+      }, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + String(access)
+        }
       });
+  
+      // Capturar la respuesta exitosa
+      const responseData = response;
+      console.log('Respuesta exitosa:', responseData);
+  
+      location.reload(true);
+  
+      // REFRESCAR TOKENS ASÍ SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
+      // Puedes llamar a la función refreshUserTokens() aquí si es necesario.
+  
       //localStorage.setItem('status', 'free');
-
+  
       // time out 30s?
-      
-        
-      
-      
-
-  })
-
-  //refreshUserTokens(); posible error? quitar coments si es así.
+    } catch (error) {
+      // Capturar los errores
+      refreshUserTokens();
+      console.error('Error en la solicitud:', error);
+      // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
+    }
+  });
+  
 
 });
