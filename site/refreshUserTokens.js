@@ -39,7 +39,7 @@ export function getUserStatus() {
       let userStatus = response.data.user_status;
       statusElement.textContent = userStatus;
       if (userStatus === "member") {
-        console.log("f")
+
         cancelarSuscripcion.style.display = "flex";
       } else if (userStatus === "free") {
         cancelarSuscripcion.style.display = "none";
@@ -59,10 +59,10 @@ export function getNextBillingTime() {
     }
   })
     .then(response => {
-      console.log(response)
-      if (response.status === 200) {
-      console.log("aqui");
-      let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
+
+      if (response.status === 200 & response.data.sub !== 'cancelled') {
+
+      let nextTimeBillingHTML = document.getElementById('renovacion')
       let nextTimeBilling = response.data.next_billing_time;
       const fecha = new Date(nextTimeBilling);
       const dia = fecha.getDate();
@@ -70,18 +70,18 @@ export function getNextBillingTime() {
       const año = fecha.getFullYear();
 
       const fechaFormateada = `${dia}/${mes}/${año}`;
-      nextTimeBillingHTML.textContent = fechaFormateada;
+      nextTimeBillingHTML.textContent = "tus tokens se renovarán el " + fechaFormateada;
       return
     }
     //console.log(response)
-      let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
+      let nextTimeBillingHTML = document.getElementById('renovacion')
       let nextTimeBilling = '∞/∞/∞'
-      nextTimeBillingHTML.textContent = nextTimeBilling
+      nextTimeBillingHTML.textContent = ""
       return
 
 
     }).catch(error => {
-      console.log("X")
+
       console.log(error)
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = '∞/∞/∞'

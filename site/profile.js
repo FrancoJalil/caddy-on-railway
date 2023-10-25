@@ -61,11 +61,11 @@ document.addEventListener('DOMContentLoaded', () => {
   emailInput.addEventListener('input', (e) => {
     let emailUserInput = e.target.value;
     let userEmail = decodedToken.email;
-    console.log(emailUserInput);
+
 
 
     if (emailUserInput === userEmail) {
-      console.log("OK")
+
       enviarBtn.classList.add('active-button-profile')
       enviarBtn.classList.remove('disabled-button-profile')
 
@@ -96,7 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
       // Capturar la respuesta exitosa
       const responseData = response;
-      console.log('Respuesta exitosa:', responseData);
+
   
       location.reload(true);
   
