@@ -59,8 +59,9 @@ export function getNextBillingTime() {
     }
   })
     .then(response => {
-
-      if (false) {
+      console.log(response)
+      if (response.status === 200) {
+      console.log("aqui");
       let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
       let nextTimeBilling = response.data.next_billing_time;
       const fecha = new Date(nextTimeBilling);
