@@ -79,6 +79,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
   enviarBtn.addEventListener('click', async function () {
+
+    enviarBtn.style.display = 'none';
+
     let access = localStorage.getItem('access');
     
     try {
@@ -109,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       console.error('Error en la solicitud:', error);
       // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
     }
+
   });
   
 
