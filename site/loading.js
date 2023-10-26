@@ -37,6 +37,7 @@ function borrarTexto(message) {
 }
 
 export function detenerBucle() {
+    document.getElementById('contador').textContent = 0.00
     textElement.textContent = "";
     clearInterval(writingInterval);
     clearInterval(deletingInterval);
