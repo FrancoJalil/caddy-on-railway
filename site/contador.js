@@ -13,6 +13,7 @@ export const activarContador = () => {
 
 export const detenerContador = () => {
   clearInterval(intervalo);
-  document.getElementById("contador").textContent = 0;
+  document.getElementById("contador").textContent = 0.00;
+  tiempo = 0;
 
 };

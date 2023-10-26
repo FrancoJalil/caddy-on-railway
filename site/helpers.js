@@ -4468,9 +4468,9 @@ export async function saveImage() {
     const saveImageButton = document.getElementById("save-image-button");
     saveImageButton.classList.add("disabled-button");
     window.scrollTo(0, 0);
-    activarContador();
+    
     showLoading(true, "Convirtiendo los lienzos a imagenes... (40s aprox.)", "Guardando");
-
+    activarContador();
 
 
     try {
