@@ -66,7 +66,7 @@ export function getNextBillingTime() {
     }
   })
     .then(response => {
-
+      console.log(response)
       if (response.status === 200 & response.data.sub !== 'cancelled') {
 
       let nextTimeBillingHTML = document.getElementById('renovacion')
@@ -79,6 +79,8 @@ export function getNextBillingTime() {
       const fechaFormateada = `${dia}/${mes}/${año}`;
       nextTimeBillingHTML.textContent = "tus tokens se renovarán el " + fechaFormateada;
       return
+    } else if (response.data.sub === 'cancelled') {
+      document.getElementById('upgrade').style.display = "block";
     }
     //console.log(response)
       let nextTimeBillingHTML = document.getElementById('renovacion')
