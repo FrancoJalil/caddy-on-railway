@@ -8,7 +8,7 @@ async function logoutUser() {
   localStorage.removeItem('access')
   localStorage.removeItem('refresh')
   // Redireccionar a otra página
-window.location.href = "/login";
+  window.location.href = "/login";
 
 }
 
@@ -61,6 +61,9 @@ axios.interceptors.response.use(
             
                 
                 originalRequest.headers.Authorization = `Bearer ${token}`; // + String(token)?
+
+              accessToken = token; //added
+
                 return axios(originalRequest);
             });
         }
