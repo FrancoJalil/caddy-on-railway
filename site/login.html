@@ -113,6 +113,8 @@
           // Hacer algo si se encuentra "?next=pricing" en la URL
           console.log('La URL contiene "?next=pricing"');
           window.location.href = "/pricing";
+        } else if (queryString.includes('?next=verification')) {
+          window.location.href = "/verification";
         } else {
           window.location.href = "/";
         }
