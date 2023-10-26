@@ -62,8 +62,6 @@ axios.interceptors.response.use(
                 
                 originalRequest.headers.Authorization = `Bearer ${token}`; // + String(token)?
 
-              accessToken = token; //added
-
                 return axios(originalRequest);
             });
         }
