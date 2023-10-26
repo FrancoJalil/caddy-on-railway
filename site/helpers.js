@@ -452,7 +452,7 @@ export function generateImage() {
         const cantidadPost = parseInt(document.getElementById("slider-value").textContent);
         ////console.log("POSTS", cantidadPost);
 
-        axios.post('https://api.corailo.com/image-generation/generate', {
+        axios.post('https://longapi.corailo.com/image-generation/generate', {
             subject: JSON.stringify({
                 subject: valuePromptInput,
                 format: format,
@@ -4542,7 +4542,7 @@ async function generateModifiedImages() {
 
 function saveImagesToBackend(modifiedImages, access_token_g) {
     return new Promise((resolve, reject) => {
-        axios.post('https://api.corailo.com/image-generation/save_images', {
+        axios.post('https://longapi.corailo.com/image-generation/save_images', {
             images: modifiedImages,
             images_data: imagesDataFront,
             prompt: valuePromptInput,
