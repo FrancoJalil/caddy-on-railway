@@ -71,7 +71,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Capturar la respuesta exitosa
             const responseData = response;
-            console.log(responseData.status);
+
+            if (responseData.status == 200) {
+                window.location.href = "/";
+            }
 
         } catch (error) {
             // Capturar los errores

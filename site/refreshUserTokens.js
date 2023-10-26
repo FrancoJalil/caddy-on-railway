@@ -37,6 +37,7 @@ export function getUserStatus() {
     .then(response => {
 
       let userStatus = response.data.user_status;
+      let userVerified = response.data.user_verified;
       statusElement.textContent = userStatus;
       if (userStatus === "member") {
 
@@ -44,6 +45,12 @@ export function getUserStatus() {
       } else if (userStatus === "free") {
         cancelarSuscripcion.style.display = "none";
       }
+
+      if (!userVerified) {
+        document.getElementById('verification').style.display = 'block';
+      }
+
+
       return userStatus;
 
     });

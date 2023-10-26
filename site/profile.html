@@ -14,16 +14,16 @@
 <body>
     <script src="axios.js"></script>
     <script type="module" src="context.js"></script>
-    
+
     <script type="module" src="./profile.js"></script>
 
 
     <div class="menu-border">
         <div class="logo-container">
             <div class="logo">
-            <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1698261737/assets/logo_beta_dmxlyc.png" alt=""
-          >
-        </div>
+                <img src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1698261737/assets/logo_beta_dmxlyc.png"
+                    alt="">
+            </div>
         </div>
         <ul class="menu">
 
@@ -34,21 +34,21 @@
             </li>
 
             <li>
-        <a href="#">AI Reels (Pronto)</a>
-      </li>
-            
+                <a href="#">AI Reels (Pronto)</a>
+            </li>
+
             <li>
                 <a href="/my-generations">My Generations</a>
             </li>
 
-            
+
 
             <li>
                 <div class="tokens">
-                <a href="/profile">
-                    <p>Tokens: <span id="tokens">0</span></p>
-                    <img id="photo" src="" alt="" style="width: 30px; border-radius: 3.25rem;">
-                  </a>
+                    <a href="/profile">
+                        <p>Tokens: <span id="tokens">0</span></p>
+                        <img id="photo" src="" alt="" style="width: 30px; border-radius: 3.25rem;">
+                    </a>
                 </div>
             </li>
         </ul>
@@ -58,35 +58,40 @@
     <div class="first-profile-container">
 
         <div class="profile-container">
-            
+
             <div class="settings-container">
                 <h1>Your settings</h1>
 
                 <div class="settings">
-                <div class="status">
-                    <p>Status:</p>
-                    <div class="starter" id="status"></div>
+                    <div class="status">
+                        <p>Status:</p>
+                        <div class="starter" id="status"></div>
+                        
+
+                    </div>
                     
+                    <p id="renovacion" class="renovacion"></p>
+                    <a id="verification" href="/verification" style="display: none;width: fit-content; text-decoration: none; color: rgb(177, 75, 244); font-style: italic;">Obtén 48 tokens verificando tu cuenta</a>
+
+
+                    <div class="email-container">
+                        <p>Your email</p>
+                        <div class="email">
+                            <p id="email">example@gmail.com</p>
+                        </div>
+                    </div>
+                    <button id="logoutButton" style="width: fit-content; background-color: brown; opacity: 0.5;"
+                        type="button">logout</button>
+                    <button id="cancelarSuscripcion" style="width: fit-content; background-color: brown; opacity: 0.5;"
+                        type="button">Cancelar suscripción</button>
 
                 </div>
-                <p id="renovacion" class="renovacion"></p>
-                <div class="email-container">
-                    <p>Your email</p>
-                    <div class="email">
-                        <p id="email">example@gmail.com</p>
-                    </div>
-                </div>
-                <button id="logoutButton" style="width: fit-content; background-color: brown; opacity: 0.5;" type="button">logout</button>
-                <button id="cancelarSuscripcion" style="width: fit-content; background-color: brown; opacity: 0.5;" type="button">Cancelar suscripción</button>
-                
+
             </div>
-            
-            </div>
-            <img style="width: 30%; border-radius: 2rem; padding: 1rem;" src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697929908/assets/tea3_jopswv.jpg"
-                    alt="">
+            <img style="width: 30%; border-radius: 2rem; padding: 1rem;"
+                src="https://res.cloudinary.com/dlqpkf6fd/image/upload/v1697929908/assets/tea3_jopswv.jpg" alt="">
             <div class="img-profile-container">
-                <img src=""
-                    alt="" id="profilePhoto" style="width: 30px; border-radius: 3.25rem;">
+                <img src="" alt="" id="profilePhoto" style="width: 30px; border-radius: 3.25rem;">
             </div>
         </div>
 
@@ -105,21 +110,19 @@
     <script>
         // Obtenemos la URL actual
         var url = window.location.href;
-    
+
         // Obtenemos todos los enlaces del menú
         var menuLinks = document.querySelectorAll(".menu a");
-    
-    
+
+
         // Recorremos los enlaces para verificar si alguno coincide con la URL actual
         menuLinks.forEach(function (link) {
-          if (link.href === url) {
-            // Agregamos la clase "active" al elemento "li" padre del enlace
-            link.parentElement.classList.add("active");
-          }
+            if (link.href === url) {
+                // Agregamos la clase "active" al elemento "li" padre del enlace
+                link.parentElement.classList.add("active");
+            }
         });
-      </script>
+    </script>
 </body>
 
 </html>
-
-
