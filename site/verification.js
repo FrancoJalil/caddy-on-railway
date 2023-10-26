@@ -38,7 +38,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Capturar la respuesta exitosa
             const responseData = response;
-            console.log(responseData);
+            console.log(responseData.status);
+            if (responseData.status == 200) {
+                document.getElementById('otpContainer').style.visibility = "visible"
+            } else {
+                document.getElementById('errorMsg').textContent = response.data.msg;
+            }
 
         } catch (error) {
             // Capturar los errores
@@ -66,7 +71,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Capturar la respuesta exitosa
             const responseData = response;
-            console.log(responseData);
+            console.log(responseData.status);
 
         } catch (error) {
             // Capturar los errores

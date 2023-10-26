@@ -96,13 +96,13 @@
             
 
 
-          <div>
+          <div id="numContainer">
             <p>Introduce tu numero de celular</p>
             <input type="number" id="num">
             <button id="sendSms">Enviar</button>
           </div>
           <br>
-          <div style="width: 100%;" class="copy-container">
+          <div style="width: 100%; visibility: hidden;" class="copy-container" id="otpContainer">
             <p>Introduce el código que te enviamos.</p>
 
             <div>
@@ -112,6 +112,8 @@
             
 
           </div>
+          <div style="display: none;"><p id="errorMsg"></p></div>
+          
         </div>
 
 
