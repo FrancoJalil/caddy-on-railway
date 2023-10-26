@@ -1,7 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    getUserStatus();
-
     // extraer data jwt aquí
     const accessToken = localStorage.getItem('access');
 
