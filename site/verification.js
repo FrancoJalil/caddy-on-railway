@@ -1,3 +1,17 @@
+function mostrarOcultarMensaje(elementId, mensaje) {
+    var mensajeElement = document.getElementById(elementId);
+
+    if (mensajeElement.style.display === "block") {
+        mensajeElement.style.display = "none";
+    } else {
+        mensajeElement.textContent = mensaje; // Establece el contenido del mensaje
+        mensajeElement.style.display = "block";
+        setTimeout(function() {
+            mensajeElement.style.display = "none";
+        }, 3000);
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
 
     // extraer data jwt aquí
@@ -32,6 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     sendSms.addEventListener('click', function () {
+        
         axios.post('https://api.corailo.com/send-sms-code/', {
             user_num: phone
         }, {
@@ -43,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(response => {
 
             if (!response) {
-                document.getElementById('errorMsg').textContent = "Error al verificar el numero ingresado."
+                mostrarOcultarMensaje('errorMsg', "Error al verificar el numero ingresado.");
             }
 
             console.log(response);
@@ -51,7 +66,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (response.status == 200) {
                 document.getElementById('otpContainer').style.visibility = "visible";
             } else {
-                document.getElementById('errorMsg').textContent = response.data.msg;
+
+                mostrarOcultarMensaje('errorMsg', response.data.msg);
             }
         })
         .catch(function (error) {
@@ -80,7 +96,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Capturar la respuesta exitosa
             if (!response) {
-                document.getElementById('errorMsg').textContent = "Error en el código."
+
+                mostrarOcultarMensaje('errorMsg', "Error en el código.");
+                
                 return;
             }
 
@@ -91,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             // Capturar los errores
             console.error('Error en la solicitud:', error);
-            document.getElementById('errorMsg').textContent = response.data.msg;
+            mostrarOcultarMensaje('errorMsg', "Error en el código.");
         }
 
     });
