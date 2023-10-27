@@ -247,7 +247,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if (localStorage.getItem('authorPhoto')) {
     document.getElementById('authorPhoto').src = localStorage.getItem('authorPhoto');
-  }
+  } 
   //
 
   document.getElementById('delete-canvas').addEventListener('click', () => {

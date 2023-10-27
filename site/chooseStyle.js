@@ -14,11 +14,11 @@ export let stylesJSON = {
             type: CARRUSEL,
             post_description: "Las películas de Pixar van más allá de la diversión y la animación. Cada una de ellas nos enseña valiosas lecciones de vida. ¿Recuerdas la famosa frase de Finding Nemo: Sigue nadando? Esta película nos enseña la importancia de la perseverancia y la superación. En Up, aprendemos sobre el valor de los sueños y la importancia de disfrutar cada momento. Descubre las lecciones de vida en las películas de Pixar y déjate inspirar. #Pixar #LeccionesDeVida #Inspiración #Animación",
             images: [
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953932/media/carousel-images/Ccarrusel_0-P0_ivburi.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953933/media/carousel-images/Ccarrusel_0-P1_jder2q.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953936/media/carousel-images/Ccarrusel_0-P2_opjare.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953937/media/carousel-images/Ccarrusel_0-P3_si7zts.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696953939/media/carousel-images/Ccarrusel_0-P4_zqyame.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352969/recursos/Ccarrusel_0-P0_ivburi_oakjah.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352969/recursos/Ccarrusel_0-P2_opjare_s5pfzo.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352969/recursos/Ccarrusel_0-P3_si7zts_lbvj1r.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352969/recursos/Ccarrusel_0-P1_jder2q_qn6ztv.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352970/recursos/Ccarrusel_0-P4_zqyame_yhigtm.png',
             ],
             promptI: 'Dioses Romanos // Segunda guerra mundial // Egipto // Naturaleza // Salud'
         },
@@ -27,11 +27,11 @@ export let stylesJSON = {
             type: CARRUSEL,
             post_description: "Descubre estos alimentos que te ayudan a acelerar el metabolismo. #metabolismo #alimentos #nutrición #bajardepeso",
             images: [
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954283/media/carousel-images/Ccarrusel_3-P0_wadirq.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954285/media/carousel-images/Ccarrusel_3-P1_ejkrmy.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954287/media/carousel-images/Ccarrusel_3-P2_m2mqlu.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954289/media/carousel-images/Ccarrusel_3-P3_c2uzun.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954291/media/carousel-images/Ccarrusel_3-P4_lkl9ft.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352961/recursos/Ccarrusel_3-P0_wadirq_f5aeya.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352961/recursos/Ccarrusel_3-P2_m2mqlu_rhdbzn.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352962/recursos/Ccarrusel_3-P4_lkl9ft_flykzq.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352962/recursos/Ccarrusel_3-P1_ejkrmy_uuxpoe.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352963/recursos/Ccarrusel_3-P3_c2uzun_toamfo.png',
             ],
             promptI: 'Bajar de peso // Programación web // Leer más rapido // Mejorar profesionalmente'
         },
@@ -41,11 +41,11 @@ export let stylesJSON = {
             post_description: "Explora el fascinante mundo de las armas y armaduras medievales. Desde espadas y lanzas hasta armaduras de placas y escudos, las herramientas de combate de la época medieval eran variadas y sofisticadas. Descubre cómo se fabricaban y utilizaban estas armas, así como su importancia en la guerra y en la vida cotidiana. #historiamedieval #armasmedievales #armadurasmedievales #combate",
             images: [
 
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954651/media/carousel-images/Ccarrusel_2-P0_i4gch1.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954654/media/carousel-images/Ccarrusel_2-P1_nyivfm.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954657/media/carousel-images/Ccarrusel_2-P2_diu5sp.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954661/media/carousel-images/Ccarrusel_2-P3_mubtqv.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696954665/media/carousel-images/Ccarrusel_2-P4_r8pnco.png'
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352955/recursos/Ccarrusel_2-P0_i4gch1_fyipjw.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352954/recursos/Ccarrusel_2-P1_nyivfm_anlmzb.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352954/recursos/Ccarrusel_2-P2_diu5sp_mlwdba.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352954/recursos/Ccarrusel_2-P3_mubtqv_pbnaom.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352955/recursos/Ccarrusel_2-P4_r8pnco_ku5yjo.png'
             ],
             promptI: 'Dioses Romanos // Segunda guerra mundial // Egipto // Naturaleza // Salud'
         },
@@ -55,11 +55,11 @@ export let stylesJSON = {
             post_description: "Descubre los mitos y leyendas de la antigua Roma. #mitologiaromana #diosesromanos #leyendas #culturaantigua",
             images: [
 
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955458/media/carousel-images/Ccarrusel_2-P0_u8kit9.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955461/media/carousel-images/Ccarrusel_2-P1_jbkxol.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955464/media/carousel-images/Ccarrusel_2-P2_dbazmm.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955467/media/carousel-images/Ccarrusel_2-P3_wdxijs.png',
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696955470/media/carousel-images/Ccarrusel_2-P4_qc1c82.png'
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352975/recursos/Ccarrusel_2-P0_u8kit9_f2nlsi.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352977/recursos/Ccarrusel_2-P1_jbkxol_kuzj5h.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352976/recursos/Ccarrusel_2-P2_dbazmm_mucii8.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352978/recursos/Ccarrusel_2-P3_wdxijs_kax9ke.png',
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352978/recursos/Ccarrusel_2-P4_qc1c82_mrqhlz.png'
             ],
             promptI: 'Dioses Romanos // Segunda guerra mundial // Egipto // Naturaleza // Salud'
         },
@@ -68,7 +68,7 @@ export let stylesJSON = {
             type: SOLO,
             post_description: "Enseñanza de Marco Aurelio sobre la búsqueda de la felicidad. #MarcoAurelio #FilosofíaDeVida",
             images: [
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696694532/media/carousel-images/Ccarrusel_1-P0_yh5qjb.png'
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352931/recursos/autor_vmjbqc.png'
             ],
             promptI: 'Marco Aurelio // Albert Einstein // Sócrates // Nikola Tesla'
         },
@@ -77,7 +77,7 @@ export let stylesJSON = {
             type: SOLO,
             post_description: "Descubre cómo los osos panda utilizan su pulgar oponible para sobrevivir en su hábitat y cómo esta adaptación los distingue de otros animales. #OsoPanda #PulgarOponible #Adaptación",
             images: [
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696956346/media/carousel-images/Ccarrusel_3-P0_uivy77.png'
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352931/recursos/dato_curioso_fjujpe.png'
             ],
             promptI: 'Osos Panda // Naturaleza // El Universo // La Biblia // Matemáticas'
         },
@@ -86,7 +86,7 @@ export let stylesJSON = {
             type: SOLO,
             post_description: "Frases de Albert Einstein: Reflexiones sobre el pensamiento. #AlbertEinstein #Mente",
             images: [
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696956698/media/carousel-images/Ccarrusel_0-P0_xgbrlo.png'
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352931/recursos/Ccarrusel_0-P0_xgbrlo_p2znqh.png'
             ],
             promptI: 'Marco Aurelio // Albert Einstein // Sócrates // Nikola Tesla'
         },
@@ -95,7 +95,7 @@ export let stylesJSON = {
             type: SOLO,
             post_description: "Explora la exuberante biodiversidad de los bosques tropicales, pulmones verdes del planeta. #BosquesTropicales #Biodiversidad #Naturaleza",
             images: [
-                'https://res.cloudinary.com/dlqpkf6fd/image/upload/v1696957201/media/carousel-images/Ccarrusel_0-P0_sh2s2x.png'
+                'https://res.cloudinary.com/dspqjweej/image/upload/v1698352932/recursos/sabias_que_jinuiw.png'
             ],
             promptI: 'Osos Panda // Naturaleza // El Universo // La Biblia // Matemáticas'
         }
