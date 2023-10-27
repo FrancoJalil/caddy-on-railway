@@ -9,13 +9,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtener el elemento de imagen por su id
     const sendSms = document.getElementById('sendSms');
     const sendOtp = document.getElementById('sendOtp');
-    var num;
+    var phone;
     var otp;
 
-    var inputElementNum = document.getElementById('num')
-    inputElementNum.addEventListener('input', function (event) {
-        num = event.target.value;
-        console.log(num);
+    var inputElementphone = document.getElementById('phone')
+    inputElementphone.addEventListener('input', function (event) {
+        phone = event.target.value;
+        console.log(phone);
     })
 
     var inputElementOtp = document.getElementById('otp')
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await axios.post('https://api.corailo.com/send-sms-code/', {
-                user_num: num
+                user_phone: phone
             }, {
                 headers: {
                     'Content-Type': 'application/json',

@@ -8,6 +8,11 @@
   <link rel="stylesheet" type="text/css" href="basic.css">
   <link rel="stylesheet" type="text/css" href="../styles.css">
   <link rel="stylesheet" type="text/css" href="styles-info.css">
+  <link
+     rel="stylesheet"
+     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
+   />
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
@@ -16,6 +21,10 @@
   <script src="axios.js"></script>
   
   <style>
+    .iti__country-list {
+      color: #121212;
+      background-color: rgb(240, 240, 240);
+    }
 .extra-container .bloque .content .container-right {
   justify-content: right;
 }
@@ -56,7 +65,7 @@
 
     input {
       background-color: #121212;
-      color: rgb(151, 151, 151);
+      /*color: rgb(151, 151, 151);*/
       padding: 10px;
       margin-bottom: 10px;
       border: 1px solid #474747;
@@ -99,6 +108,7 @@
           <div id="numContainer">
             <p>Introduce tu numero de celular</p>
             <input type="number" id="num">
+            <input style="color: #121212 !important" id="phone" type="tel" name="phone" />
             <button id="sendSms">Enviar</button>
           </div>
           <br>
@@ -130,7 +140,13 @@
 
   <script type="module" src="./verification.js"></script>
 
-
+  <script>
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+  </script>
 
 
   
