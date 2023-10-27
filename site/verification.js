@@ -31,33 +31,32 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(otp);
     })
 
-    sendSms.addEventListener('click', async function () {
+    sendSms.addEventListener('click', function () {
+        axios.post('https://api.corailo.com/send-sms-code/', {
+            user_num: phone
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + String(accessToken)
+            }
+        })
+        .then(response => {
 
-        try {
-            const response = await axios.post('https://api.corailo.com/send-sms-code/', {
-                user_num: phone
-            }, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + String(accessToken)
-                }
-            });
-            console.log(response)
-            // Capturar la respuesta exitosa
-            const responseData = response;
+            if (!response) {
+                document.getElementById('errorMsg').textContent = "Error al verificar el numero ingresado."
+            }
 
-            if (responseData.status == 200) {
-                document.getElementById('otpContainer').style.visibility = "visible"
+            console.log(response);
+
+            if (response.status == 200) {
+                document.getElementById('otpContainer').style.visibility = "visible";
             } else {
                 document.getElementById('errorMsg').textContent = response.data.msg;
             }
-
-        } catch (error) {
-            // Capturar los errores
+        })
+        .catch(function (error) {
             console.error('Error en la solicitud:', error);
-
-        }
-
+        });
     });
 
 
@@ -79,6 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
             // Capturar la respuesta exitosa
             const responseData = response;
 
+            // Capturar la respuesta exitosa
+            if (!response) {
+                document.getElementById('errorMsg').textContent = "Error en el código."
+                return;
+            }
+
             if (responseData.status == 200) {
                 window.location.href = "/";
             }
@@ -86,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
         } catch (error) {
             // Capturar los errores
             console.error('Error en la solicitud:', error);
-
+            document.getElementById('errorMsg').textContent = response.data.msg;
         }
 
     });
