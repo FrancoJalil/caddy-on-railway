@@ -64,14 +64,7 @@ axios.interceptors.response.use(
 
                 return axios(originalRequest);
             });
-          } else if (error.response.status === 400) {
-            // Manejar el error 400 de manera específica aquí
-            console.log("Error 400:", error.response.data);
-        } else {
-            // Para otros códigos de estado, simplemente cerrar la sesión del usuario
-            console.log("Error:", error);
-            logoutUser();
-        }
+          } 
     }
 );
 
