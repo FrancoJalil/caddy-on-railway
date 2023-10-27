@@ -64,6 +64,9 @@ axios.interceptors.response.use(
 
                 return axios(originalRequest);
             });
+          } else if (error.response.status === 401 && originalRequest._retry) {
+            console.log("cerrando sesión.")
+            logoutUser();
           } 
     }
 );

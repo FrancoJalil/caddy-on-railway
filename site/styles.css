@@ -516,6 +516,7 @@ img {
 
 #container-buttons-generated button {
     width: 168.45px;
+    min-width: fit-content;
     height: 40.59px;
     margin: 1rem;
 }
