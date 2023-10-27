@@ -8,35 +8,37 @@
   <link rel="stylesheet" type="text/css" href="basic.css">
   <link rel="stylesheet" type="text/css" href="../styles.css">
   <link rel="stylesheet" type="text/css" href="styles-info.css">
-  <link
-     rel="stylesheet"
-     href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css"
-   />
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/css/intlTelInput.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/intlTelInput.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body style="display: flex;">
 
   <script src="axios.js"></script>
-  
+
   <style>
     .iti__country-list {
       color: #121212;
       background-color: rgb(240, 240, 240);
     }
-.extra-container .bloque .content .container-right {
-  justify-content: right;
-}
-.extra-container .bloque .content .container-left {
-  justify-content: center;
-}
-.extra-container .content {
-  height: 100%;
-}
-.extra-container .bloque {
-  justify-content: center;
-}
+
+    .extra-container .bloque .content .container-right {
+      justify-content: right;
+    }
+
+    .extra-container .bloque .content .container-left {
+      justify-content: center;
+    }
+
+    .extra-container .content {
+      height: 100%;
+    }
+
+    .extra-container .bloque {
+      justify-content: center;
+    }
+
     .extra-container {
       width: 100%;
     }
@@ -102,13 +104,14 @@
 
 
 
-            
+
 
 
           <div id="numContainer">
             <p>Introduce tu numero de celular</p>
             <input id="phone" type="tel" name="phone" />
             <button id="sendSms">Enviar</button>
+            <div class="alert alert-info" style="display: none;"></div>
           </div>
           <br>
           <div style="width: 100%; visibility: hidden;" class="copy-container" id="otpContainer">
@@ -116,13 +119,15 @@
 
             <div>
               <input type="number" id="otp">
-            <button id="sendOtp">Ok</button>
+              <button id="sendOtp">Ok</button>
             </div>
-            
+
 
           </div>
-          <div style="display: none;"><p id="errorMsg"></p></div>
-          
+          <div style="display: none;">
+            <p id="errorMsg"></p>
+          </div>
+
         </div>
 
 
@@ -139,17 +144,11 @@
 
   <script type="module" src="./verification.js"></script>
 
-  <script>
-    const phoneInputField = document.querySelector("#phone");
-    const phoneInput = window.intlTelInput(phoneInputField, {
-      utilsScript:
-        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
-    });
-  </script>
 
 
-  
-  
+
+
+
 </body>
 
 </html>

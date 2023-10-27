@@ -3,6 +3,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // extraer data jwt aquí
     const accessToken = localStorage.getItem('access');
 
+    const phoneInputField = document.querySelector("#phone");
+    const phoneInput = window.intlTelInput(phoneInputField, {
+      utilsScript:
+        "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+    });
+
+
+    
+
 
     //document.getElementById('photo') decodedToken.picture
 
@@ -12,11 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
     var phone;
     var otp;
 
-    var inputElementphone = document.getElementById('phone')
-    inputElementphone.addEventListener('input', function (event) {
-        phone = event.target.value;
-        console.log(phone);
-    })
+    document.getElementById('sendSms').addEventListener('click', function () {
+        phone = phoneInput.getNumber();
+      })
 
     var inputElementOtp = document.getElementById('otp')
     inputElementOtp.addEventListener('input', function (event) {
