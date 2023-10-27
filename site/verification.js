@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const response = await axios.post('https://api.corailo.com/send-sms-code/', {
-                user_phone: phone
+                user_num: phone
             }, {
                 headers: {
                     'Content-Type': 'application/json',
