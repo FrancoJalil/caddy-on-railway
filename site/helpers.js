@@ -3877,7 +3877,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
 
         //https://cdn-icons-png.flaticon.com/512/7350/7350737.png
 
-        allObjects.push(fabricTextAuthor);
+        //allObjects.push(fabricTextAuthor);
 
         canvas.add(fabricTextD);
         canvas.renderAll();
