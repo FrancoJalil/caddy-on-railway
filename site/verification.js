@@ -31,33 +31,28 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(otp);
     })
 
-    sendSms.addEventListener('click', async function () {
-
-        try {
-            let response = await axios.post('https://api.corailo.com/send-sms-code/', {
-                user_num: phone
-            }, {
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Authorization': 'Bearer ' + String(accessToken)
-                }
-            });
-
-            // Capturar la respuesta exitosa
+    sendSms.addEventListener('click', function () {
+        axios.post('https://api.corailo.com/send-sms-code/', {
+            user_num: phone
+        }, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': 'Bearer ' + String(accessToken)
+            }
+        })
+        .then(response => {
+            console.log(response);
             const responseData = response.data;
             console.log(responseData.status);
             if (responseData.status == 200) {
-                document.getElementById('otpContainer').style.visibility = "visible"
+                document.getElementById('otpContainer').style.visibility = "visible";
             } else {
-                document.getElementById('errorMsg').textContent = response.data.msg;
+                document.getElementById('errorMsg').textContent = responseData.msg;
             }
-
-        } catch (error) {
-            // Capturar los errores
+        })
+        .catch(function (error) {
             console.error('Error en la solicitud:', error);
-
-        }
-
+        });
     });
 
 
