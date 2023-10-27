@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     sendSms.addEventListener('click', async function () {
 
         try {
-            const response = await axios.post('https://api.corailo.com/send-sms-code/', {
+            let response = await axios.post('https://api.corailo.com/send-sms-code/', {
                 user_num: phone
             }, {
                 headers: {
@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             // Capturar la respuesta exitosa
-            const responseData = response;
+            const responseData = response.data;
             console.log(responseData.status);
             if (responseData.status == 200) {
                 document.getElementById('otpContainer').style.visibility = "visible"
