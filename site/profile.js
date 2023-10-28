@@ -141,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   document.getElementById('enviarMensaje').addEventListener('click', async function () {
     // capturar textarea
+    let msgToSend = document.getElementById('textA').value;
     
     //axios
     const access = localStorage.getItem('access');
