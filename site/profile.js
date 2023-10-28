@@ -150,7 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     try {
-      const response = await axios.post('https://api.corailo.com/contact-me', data, {
+      const response = await axios.post('https://api.corailo.com/contact-me/', data, {
         headers: {
           'Content-Type': 'application/json',
           'Authorization': 'Bearer ' + String(access)
@@ -164,7 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
         
         buttonMsgContainer.style.display = 'none';
         alertmsg.style.display = 'block';
-        location.reload(true);
+        setTimeout(() => {
+          location.reload(true);
+        }, 2000);
       }
       
 
@@ -181,7 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
       buttonMsgContainer.style.display = 'none';
       alertmsg.textContent = 'Error al enviar. Intentalo de nuevo más tarde.'
       alertmsg.style.display = 'block';
-      location.reload(true);
+      setTimeout(() => {
+        location.reload(true);
+      }, 2000);
       // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
     }
 
