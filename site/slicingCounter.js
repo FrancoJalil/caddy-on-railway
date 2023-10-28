@@ -14,7 +14,7 @@ export function updateSliderValue() {
         tokensValue.textContent = parseInt(slider.value) * 1;
     } else {
    
-        tokensValue.textContent = parseInt(slider.value) * 3;
+        tokensValue.textContent = parseInt(slider.value) * 2;
     }
 
 }
