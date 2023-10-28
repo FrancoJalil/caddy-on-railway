@@ -180,3 +180,9 @@ h1 {
     opacity: 1 !important;
     background-color: #b62a2a !important;
 }
+
+    @media screen and (max-height: 684px) {
+        .profile-container {
+            padding-bottom: 5.5rem;
+    }
+}
