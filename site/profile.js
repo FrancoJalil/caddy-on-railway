@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   getUserStatus();
   getNextBillingTime();
-  
+
 
   emailElement.textContent = decodedToken.email;
   // Establecer el atributo "src" de la imagen con la URL del campo "picture"
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
     enviarBtn.style.display = 'none';
 
     let access = localStorage.getItem('access');
-    
+
     try {
       const response = await axios.post('https://api.corailo.com/payments/paypal/subscription/cancel', {
         subscriptionID: "hola"
@@ -93,18 +93,18 @@ document.addEventListener('DOMContentLoaded', () => {
           'Authorization': 'Bearer ' + String(access)
         }
       });
-  
+
       // Capturar la respuesta exitosa
       const responseData = response;
 
-  
+
       location.reload(true);
-  
+
       // REFRESCAR TOKENS ASÍ SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
       // Puedes llamar a la función refreshUserTokens() aquí si es necesario.
-  
+
       //localStorage.setItem('status', 'free');
-  
+
       // time out 30s?
     } catch (error) {
       // Capturar los errores
@@ -114,6 +114,81 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
   });
+
+
+
+
+
+
+  let alertmsg = document.getElementById('alertmsg');
+  let buttonMsgContainer = document.getElementById('buttonMsgContainer');
+
+  function closeButtonContent() {
+    let content = document.getElementById('contentButton');
+    if (content.style.display == 'none') {
+      document.getElementById('fpc').style.opacity = '0.5';
+      document.getElementById('contentButton').style.display = 'flex';
+    } else {
+      document.getElementById('fpc').style.opacity = '1';
+      document.getElementById('contentButton').style.display = 'none';
+    }
+  }
+
+  document.getElementById('floatButton').addEventListener('click', function () {
+    closeButtonContent();
+
+  })
+
+  document.getElementById('enviarMensaje').addEventListener('click', async function () {
+    // capturar textarea
+    
+    //axios
+    const access = localStorage.getItem('access');
+    const data = {
+      msg: msgToSend
+    };
+
+    try {
+      const response = await axios.post('https://api.corailo.com/contact-me', data, {
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': 'Bearer ' + String(access)
+        }
+      });
+
+      // Capturar la respuesta exitosa
+      
+
+      if(response) {
+        
+        buttonMsgContainer.style.display = 'none';
+        alertmsg.style.display = 'block';
+        location.reload(true);
+      }
+      
+
+      // REFRESCAR TOKENS ASÍ SE ACTUALIZA EL PERFIL Y EL STATUS Y TODO ESO
+      // Puedes llamar a la función refreshUserTokens() aquí si es necesario.
+
+      //localStorage.setItem('status', 'free');
+
+      // time out 30s?
+    } catch (error) {
+      // Capturar los errores
+      
+      console.error('Error en la solicitud:', error);
+      buttonMsgContainer.style.display = 'none';
+      alertmsg.textContent = 'Error al enviar. Intentalo de nuevo más tarde.'
+      alertmsg.style.display = 'block';
+      location.reload(true);
+      // Aquí puedes manejar el error de alguna manera, por ejemplo, mostrar un mensaje al usuario
+    }
+
+  });
+
+    
+
   
+
 
 });

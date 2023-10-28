@@ -55,7 +55,7 @@
 
     </div>
 
-    <div class="first-profile-container">
+    <div class="first-profile-container" id="fpc">
 
         <div class="profile-container">
 
@@ -107,6 +107,43 @@
             <button id="cancelarBtn">Cancelar</button>
         </div>
     </div>
+
+    <div class="floating-button-div">
+    <button style="position: fixed;bottom: 50px;right: 50px;background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);" id="floatButton">
+        X
+    </button>
+</div>
+
+    <div style="display: none; position: fixed; bottom: 150px; 
+    right: 30px; background-color: #161616; 
+    flex-direction: column; padding: 2rem; border-radius: 2rem; border: 1px solid rgb(40, 40, 40);" 
+    id="contentButton">
+    
+        <div style="display: flex; padding-bottom: 20%;">
+            <img src="https://res.cloudinary.com/dspqjweej/image/upload/v1698343973/recursos/vgx8bce2jvk1tfgkbbsr.png" alt=""
+            style="width: 40px; opacity: 0.9;padding-bottom: 0.25rem;padding-right: 0.5rem;">
+              <span style="font-family: 'Pixel', sans-serif !important; font-size: 30px;" class="degradado-texto">corailo</span>
+        </div>
+
+        <div id="buttonMsgContainer" style="display: flex; flex-direction: column;">
+        <h4 style="color: rgb(240,240,240)">Contáctanos</h4>
+        <textarea id style="background-color: #161616; color: rgb(240,240,240); border-radius: 0.5rem;" name="" id="" cols="30" rows="10" placeholder="tu mensaje..."></textarea>
+        <button id="enviarMensaje">Enviar</button>
+        
+    </div>
+    <p style="font-style: italic; display: none;" id="alertmsg">Mensaje enviado</p>
+    </div>
+
+    <script>
+        
+    </script>
 
     <script>
         // Obtenemos la URL actual
