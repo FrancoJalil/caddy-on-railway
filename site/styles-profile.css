@@ -120,8 +120,8 @@ h1 {
     width: 40%;
     margin: 15% auto;
     background: #121212;;
-    border-radius: 5px;
-    padding: 20px;
+    border-radius: 2rem;
+    padding: 2rem;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     text-align: center;
 }
@@ -179,4 +179,10 @@ h1 {
 #cancelarSuscripcion:hover {
     opacity: 1 !important;
     background-color: #b62a2a !important;
+}
+
+    @media screen and (max-height: 684px) {
+        .profile-container {
+            padding-bottom: 5.5rem;
+    }
 }
