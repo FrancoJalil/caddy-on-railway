@@ -140,8 +140,19 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   document.getElementById('enviarMensaje').addEventListener('click', async function () {
+
+
+
+
     // capturar textarea
     let msgToSend = document.getElementById('textA').value;
+
+
+
+    if (msgToSend.trim() === '') {
+      alert('El campo de texto está vacío. Por favor, introdúzca algún texto.');
+      return
+    }
     
     //axios
     const access = localStorage.getItem('access');
