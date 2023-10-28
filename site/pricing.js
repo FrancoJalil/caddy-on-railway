@@ -37,7 +37,7 @@ function ifNotPremium() {
         let jwt_token = decodeJWTAndGetUsername(refresh_token)
 
         if (jwt_token.status === 'member') {
-          window.location.href = "/home";
+          window.location.href = "/";
         }
       })
       .catch(error => {
