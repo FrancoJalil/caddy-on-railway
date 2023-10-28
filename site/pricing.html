@@ -110,7 +110,7 @@
         // You can add optional success message for the subscriber here
         let access = localStorage.getItem('access');
         // enviar data.subscriptionID al backend
-        axios.post('https://mikai-production.up.railway.app/payments/paypal/subscription/on-success', {
+        axios.post('https://api.corailo.com/payments/paypal/subscription/on-success', {
           subscriptionID: data.subscriptionID
         }, {
           headers: {
