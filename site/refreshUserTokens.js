@@ -66,23 +66,28 @@ export function getNextBillingTime() {
     }
   })
     .then(response => {
-      console.log(response)
-      if (response.status === 200 & response.data.sub !== 'cancelled') {
+      if (!response) {
+        let nextTimeBillingHTML = document.getElementById('nextTimeBilling')
+        let nextTimeBilling = '∞/∞/∞'
+        nextTimeBillingHTML.textContent = nextTimeBilling
+        return
+      }
+      else if (response.status === 200 & response.data.sub !== 'cancelled') {
 
-      let nextTimeBillingHTML = document.getElementById('renovacion')
-      let nextTimeBilling = response.data.next_billing_time;
-      const fecha = new Date(nextTimeBilling);
-      const dia = fecha.getDate();
-      const mes = fecha.getMonth() + 1;
-      const año = fecha.getFullYear();
+        let nextTimeBillingHTML = document.getElementById('renovacion')
+        let nextTimeBilling = response.data.next_billing_time;
+        const fecha = new Date(nextTimeBilling);
+        const dia = fecha.getDate();
+        const mes = fecha.getMonth() + 1;
+        const año = fecha.getFullYear();
 
-      const fechaFormateada = `${dia}/${mes}/${año}`;
-      nextTimeBillingHTML.textContent = "tus tokens se renovarán el " + fechaFormateada;
-      return
-    } else if (response.data.sub === 'cancelled') {
-      document.getElementById('upgrade').style.display = "block";
-    }
-    //console.log(response)
+        const fechaFormateada = `${dia}/${mes}/${año}`;
+        nextTimeBillingHTML.textContent = "tus tokens se renovarán el " + fechaFormateada;
+        return
+      } else if (response.data.sub === 'cancelled') {
+        document.getElementById('upgrade').style.display = "block";
+      }
+      //console.log(response)
       let nextTimeBillingHTML = document.getElementById('renovacion')
       let nextTimeBilling = '∞/∞/∞'
       nextTimeBillingHTML.textContent = ""
