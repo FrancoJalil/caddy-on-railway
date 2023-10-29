@@ -124,12 +124,21 @@ document.addEventListener('DOMContentLoaded', () => {
   let buttonMsgContainer = document.getElementById('buttonMsgContainer');
 
   function closeButtonContent() {
+
+    let floatButton = document.getElementById('floatButton');
     let content = document.getElementById('contentButton');
+
     if (content.style.display == 'none') {
+      floatButton.classList.add('floatButtonactive')
+      document.getElementById('fpc').style.transition = 'opacity 0.2s';
       document.getElementById('fpc').style.opacity = '0.5';
+      
       document.getElementById('contentButton').style.display = 'flex';
     } else {
+      floatButton.classList.remove('floatButtonactive')
+      document.getElementById('fpc').style.transition = 'opacity 0.2s';
       document.getElementById('fpc').style.opacity = '1';
+      
       document.getElementById('contentButton').style.display = 'none';
     }
   }
@@ -140,8 +149,6 @@ document.addEventListener('DOMContentLoaded', () => {
   })
 
   document.getElementById('enviarMensaje').addEventListener('click', async function () {
-
-
 
 
     // capturar textarea

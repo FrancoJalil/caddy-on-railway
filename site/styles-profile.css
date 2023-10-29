@@ -186,3 +186,22 @@ h1 {
             padding-bottom: 5.5rem;
     }
 }
+
+#floatButton:hover {
+    transition: 0.2s;
+    background-color: rgba(149, 92, 242, 1) !important;
+}
+
+#floatButton:hover img {
+    transition: 0.2s;
+    width: 53px !important;
+}
+.floatButtonactive {
+    transition: 0.2s;
+    background-color: rgba(149, 92, 242, 1) !important;
+}
+
+.floatButtonactive img {
+    transition: 0.2s;
+    width: 53px !important;
+}
