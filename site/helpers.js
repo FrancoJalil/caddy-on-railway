@@ -3264,7 +3264,7 @@ export function configurarCanvas(canvas, backgroundImageSrc, original, format, i
             }, { crossOrigin: 'Anonymous' });
             // Agregar el texto "holis"
 
-            fabricTextD = new fabric.Textbox("4 " + image_text_carru.toUpperCase(), {
+            fabricTextD = new fabric.Textbox(image_text_carru.toUpperCase(), {
                 left: 40,
                 top: 100,
                 width: 640,

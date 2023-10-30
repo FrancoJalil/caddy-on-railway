@@ -23,7 +23,6 @@ export function escribirTexto(message) {
 
 function borrarTexto(message) {
     let txt_len = message;
-    console.log("borrando");
     const textoActual = textArray[textIndex];
     deletingInterval = setInterval(function () {
         if (textElement.textContent.length >= txt_len + 3) {
