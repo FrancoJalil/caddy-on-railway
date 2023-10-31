@@ -345,6 +345,14 @@
         wrapper.addEventListener("mouseleave", autoPlay);
     </script>
 
+
+<script>
+    let sbp = document.getElementById('getStartedVerification');
+    sbp.addEventListener('click', function () {
+        fbq('trackCustom', 'getStartedV');
+    })
+
+</script>
 </body>
 
 </html>
