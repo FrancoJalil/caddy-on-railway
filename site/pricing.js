@@ -44,6 +44,9 @@ function ifNotPremium() {
       
       });
     }
+  else {
+    window.location.href = "/login?next=pricing";
+  }
 }
 
 function purchase() {
