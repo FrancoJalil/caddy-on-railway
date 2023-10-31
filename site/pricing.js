@@ -67,11 +67,12 @@ function purchase() {
 
 document.addEventListener('DOMContentLoaded', () => {
 
+
   // No tiene que ser premium, si es, redirigirlo al home
   ifNotPremium();
 
   // manejar el event listener directamente en el .html?
-  let purchaseButton = document.getElementById('paypal-button-container-P-5MC57938GY016445NMTLGJ2Y');
+  let purchaseButton = document.getElementById('paypal-button-container-P-7W942775BJ289904GMU7SECA');
 
   purchaseButton.addEventListener('click', purchase);
 
