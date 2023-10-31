@@ -276,3 +276,22 @@ img {
         height: 100%;
     }
 }
+
+.containerCards .cardUsers {
+    height: max-content;
+    border: 1px solid rgb(40,40,40);
+    border-radius: 3.25rem;
+    width: 30%;
+    background-color: #010101;
+    padding: 2rem 1.5rem;
+}
+
+.containerCards .cardUsers p{
+    line-height: 1.3;
+    text-align: left;
+}
+
+.containerCards .cardUsers img {
+    width: 20%;
+    border-radius: 50% !important;
+}
