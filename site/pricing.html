@@ -9,101 +9,77 @@
   <link rel="stylesheet" type="text/css" href="../styles.css">
   <link rel="stylesheet" type="text/css" href="styles-info.css">
   <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    .container-pricing {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      max-width: 30rem;
+      background-color: #010101;
+      height: 80%;
+      border: 1px solid rgb(40,40,40);
+      border-radius: 3.25rem;
+      padding: 2rem 2rem 4rem 2rem;
+      
+    }
+
+    .container-img {
+      width: 100%;
+    }
+    img {
+      width: 40%;
+      padding: 0.5rem;
+    }
+
+    .checks {
+      padding-top: 1rem;
+      text-align: left;
+    }
+
+    .the-price {
+      padding-top: 1rem;
+      font-size: 200%;
+    }
+
+    h4 {
+      background: linear-gradient(81.02deg, rgb(250, 85, 96) -23.47%, rgb(177, 75, 244) 45.52%, rgb(77, 145, 255) 114.8%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    }
+    
+  </style>
 </head>
 
 <body>
 
   <script src="axios.js"></script>
   <style>
-.extra-container .bloque .content .container-left {
-  height: 100%;
-}
-
-.extra-container .bloque {
-  height: fit-content;
-  align-items: self-end;
-}
-.extra-container .bloque .footer-pricing {
-  justify-content: end;
-}
-
-    #zoid-paypal-buttons-uid_579ef7c07a_mtg6mzy6ndy {
-      width: 60% important !;
-    }
-
-    .button-paypal {
-      display: flex;
-      justify-content: center;
-      width: 45%;
-    }
+    
   </style>
-
-  <!--
-  <div class="first-container">
-    <div class="extra-container">
-      <div class="content">
-        <h3>Select the best pricing for <span class="gradient">you</span></h3>
-        <img src="https://i.blogs.es/2df4c2/midjourney-arte/1366_2000.jpg" alt="">
-        <div id="paypal-button-container-P-5MC57938GY016445NMTLGJ2Y"></div>
-      </div>
-    </div>
-  </div>
--->
   <div class="extra-container">
     <h1>1 Plan <span class="gradient">∞</span> creadores</h1>
-    <div class="bloque" style="margin: 2rem 0;">
-      <div class="content">
-
-        <div class="container-left">
-          <h4>¡El salario más bajo del mercado!</h4>
-
-          <div class="price-container">
-            <p>$9</p>
-            <p>/mes</p>
-          </div>
-
-          <div style="width: 65%;" class="copy-container">
-            <p style="font-size: 110%;">Ideal para creadores de contenido</p>
-            <p>
-              Podrás aprovecharte de la inteligencia artificial y sacarle el máximo provecho,
-              ahorrandote
-              dinero y tiempo a la hora de crear tu contenido.
-            </p>
-
-
-          </div>
-          <br>
-          <div class="checks" style="opacity: 0.8;">
-            <p>- 150 Tokens mensuales (+75 posts)</p>
-            <p>- Todas las funcionalidades disponibles</p>
-            <p>- Estilos originales</p>
-            <p>¡Delega la creación de contenido a Corailo!</p>
-          </div>
-        </div>
-
-        <div class="container-right">
-          <img style="width: 100%; margin-bottom: 1rem;"
-            src="https://res.cloudinary.com/dspqjweej/image/upload/v1698725590/recursos/contrato2_dhxulb.jpg" alt="">
-        </div>
-
-
-
-
-      </div>
-      <div class="footer-pricing">
-        
-        <div class="button-paypal" id="paypal-button-container-P-7W942775BJ289904GMU7SECA">
-          
-        </div>
-        
-      </div>
-      <div style="display: flex; flex-direction: column; width: 45%; justify-content: end;">
-        <p style="font-style: italic; opacity: 0.5; font-size: 70%; font-family: Helvetica !important">¡Abrir tu cuenta de paypal es fácil, solo toma 2 minutos!</p>
-        <p style="font-style: italic; opacity: 0.5; font-size: 70%; font-family: Helvetica !important">Esto te garantizará seguridad, transparencia y manejabilidad en tu suscripción.</p>
-      </div>
+    <div class="container-pricing">
+      <div class="container-img">
+      <img src="https://res.cloudinary.com/dspqjweej/image/upload/v1698725590/recursos/contrato2_dhxulb.jpg" alt="">
     </div>
+      <h4>¡El salario más bajo del mercado!</h4>
+      <hr>
+      <div class="checks">
+        <p>- 150 Tokens mensuales (hasta 150 posts)</p>
+        <p>- Todas las funcionalidades disponibles</p>
+        <p>- Estilos originales</p>
+           
+      </div>
+      <h3 class="the-price">$9/mo</h3>
 
+      <div class="button-paypal" id="paypal-button-container-P-7W942775BJ289904GMU7SECA"></div>
+    </div>
   </div>
+
+  
+
 
   <script type="module" src="./pricing.js"></script>
 
