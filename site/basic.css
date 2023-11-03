@@ -39,9 +39,38 @@ body {
 
 }
 
+@media screen and (max-width: 860px) {
+    .menu-border .menu li a {
+        font-size: 1.7vw;
+    }
 
+}
 
 @media screen and (max-width: 1014px) {
+
+    .menu li {
+        width: 26%;
+        font-size: 90%;
+        
+    }
+
+    .menu-border .logo img {
+        margin-left: 0.4rem;
+    }
+
+    .menu-border .menu li a { 
+        margin: 0;
+        
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+
+    .format-container {
+        min-width: 25rem;
+    }
 
     #firstInputUser {
 
@@ -55,9 +84,37 @@ body {
         justify-content: center;
     }
 
+    .menu-edit {
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    #author-modal {
+        justify-content: center;
+        margin-top: 1rem;
+    } 
+
     .formats-container {
-        width: 80%;
+        width: 100%;
         margin: 0;
+    }
+
+    .inputUsername {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-style {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-edit {
+     justify-content: center;   
     }
 }
 
