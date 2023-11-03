@@ -39,9 +39,74 @@ body {
 
 }
 
+@media screen and (max-width: 860px) {
+    .menu-border .menu li a {
+        font-size: 1.7vw;
+    }
 
+}
+
+@media screen and (max-width: 848px) {
+    .menu-style {
+        flex-direction: column;
+    }
+
+    .menu-edit {
+        flex-direction: column;
+        width: fit-content;
+        
+    }
+
+    #authorModal {
+        width: fit-content;
+    }
+}
 
 @media screen and (max-width: 1014px) {
+
+    .container-button {
+        flex-direction: row !important;
+    }
+
+    input[type="range"] {
+        width: 20%;
+    }
+
+    .menu li {
+        width: 26%;
+        font-size: 90%;
+        
+    }
+
+    .menu-border .logo img {
+        margin-left: 0.4rem;
+    }
+
+    .menu-border .menu li a { 
+        margin: 0;
+        
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .modal-choose-style {
+        width: auto;
+    }
+
+    .format-container {
+        min-width: 25rem;
+        width: 100% !important;
+    }
+
+    .text-field-mg {
+        display: none !important;
+    }
+
+    .prompt-input-container {
+        width: 90%;
+    }
 
     #firstInputUser {
 
@@ -55,9 +120,37 @@ body {
         justify-content: center;
     }
 
-    .formats-container {
+    .menu-edit {
+        padding-bottom: 0;
         width: 80%;
+    }
+
+    #author-modal {
+        justify-content: center;
+        width: fit-content;
+        margin: 1rem 0;
+    } 
+
+    .formats-container {
+        width: 90%;
         margin: 0;
+    }
+
+    .inputUsername {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu-style {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .menu-edit {
+     justify-content: center;   
     }
 }
 
@@ -91,45 +184,3 @@ body {
         width: 75%;
     }
 }
-
-/*
-@media screen and (max-width: 1014px) {
-
-    body * {
-        display: none !important;
-    }
-
-    menu * {
-        display: none !important;
-    }
-
-    .first-profile-container {
-        display: none !important;
-    }
-
-    .menu-border .menu {
-        display: none;
-    }
-
-    body::before {
-        height: 100%;
-        background-image: url('https://res.cloudinary.com/dspqjweej/image/upload/v1698623264/recursos/eating_doritos_vx6obe.jpg');
-        background-size: 10rem;
-        background-position: top;
-        display: flex;
-        background-repeat: no-repeat;
-        content: "Sólo disponible en PC";
-        display: flex;
-        text-align: center;
-        justify-content: center;
-        align-items: center;
-        font-size: 24px;
-        color: rgb(233, 233, 233);
-        margin-top: 10%;
-        padding-top: -30%;
-    }
-
-
-
-}
-*/
