@@ -58,8 +58,15 @@ body {
         
     }
 
-    #authorModal {
+    #author-modal {
         width: fit-content;
+        margin: 1rem !important;
+    }
+}
+
+@media screen and (max-width: 579px) {
+    #author-modal {
+        width: 100% !important;
     }
 }
 
@@ -113,11 +120,6 @@ body {
         width: 90%;
     }
 
-    #firstInputUser {
-
-        justify-content: space-between;
-    }
-
     .format-container {
         display: flex;
         align-items: center;
@@ -133,7 +135,7 @@ body {
     #author-modal {
         justify-content: center;
         width: fit-content;
-        margin: 1rem 0;
+        margin: 0;
     } 
 
     .formats-container {
@@ -159,7 +161,7 @@ body {
     }
 }
 
-@media screen and (max-width: 1460px) {
+@media screen and (max-width: 1532px) {
     .format-container {
         width: 70%;
     }
