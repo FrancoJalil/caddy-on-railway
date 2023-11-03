@@ -82,6 +82,20 @@
     .extra-container .bloque .content {
       align-items: center;
     }
+
+    @media screen and (max-width: 1014px) {
+      .bloque {
+        width: 70% !important;
+      }
+
+      .bloque .content {
+        flex-direction: column-reverse !important;
+      }
+
+      .content .container-left {
+        justify-content: space-around;
+      }
+    }
   </style>
 
   <!--
