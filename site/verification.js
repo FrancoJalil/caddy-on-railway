@@ -19,8 +19,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const phoneInputField = document.querySelector("#phone");
     const phoneInput = window.intlTelInput(phoneInputField, {
+        initialCountry: "auto",
       utilsScript:
         "https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.8/js/utils.js",
+        geoIpLookup: function(callback) {
+            fetch("https://ipapi.co/json")
+              .then(function(res) { return res.json(); })
+              .then(function(data) { callback(data.country_code); })
+              .catch(function() { callback("us"); });
+          }
     });
 
 
