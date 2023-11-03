@@ -205,3 +205,46 @@ h1 {
     transition: 0.2s;
     width: 53px !important;
 }
+
+
+@media screen and (max-width: 1320px) {
+
+    #upgrade {
+        padding: 1rem 0;
+    }
+
+    #verification {
+        text-align: left;
+    }
+
+    .email {
+        width: max-content;
+    }
+
+    .profile-container #corailo-profile {
+        display: none !important;
+    }
+
+    .profile-container {
+        width: 80%;
+    }
+
+    .settings-container {
+        width: 100%;
+    }
+
+    .settings {
+        width: 100%;
+    }
+
+    .status-container {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .status {
+        align-items: self-start;
+        width: 100%;
+        flex-direction: column;
+    }
+}
