@@ -4599,7 +4599,7 @@ export function modoEdicion() {
         })
         //
 
-        document.getElementById('container-editable').style.display = 'inline-flex';
+        document.getElementById('container-editable').style.display = 'flex';
         document.getElementById('container-editable').style.position = 'fixed';
         modoEdicionIsActive = true;
     } else {

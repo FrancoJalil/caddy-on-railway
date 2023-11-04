@@ -87,7 +87,7 @@ body {
     }
 
     #container-editable {
-        display: flex !important;
+        /*display: flex !important;*/
         flex-direction: column !important;
     }
 
