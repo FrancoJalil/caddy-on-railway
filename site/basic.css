@@ -76,6 +76,9 @@ body {
     }
 }
 
+.upButtons {
+    display: flex;
+}
 
 @media screen and (max-width: 980px) {
 
@@ -83,7 +86,7 @@ body {
         flex-direction: column !important;
     }
 
-    .container-editable {
+    #container-editable {
         display: flex !important;
         flex-direction: column !important;
     }
@@ -98,7 +101,6 @@ body {
     .upButtons {
         display: flex !important;
         justify-content: center !important;
-        align-items: center !important;
     }
 }
 
