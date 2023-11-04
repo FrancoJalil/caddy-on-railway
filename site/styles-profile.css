@@ -248,3 +248,44 @@ h1 {
         flex-direction: column;
     }
 }
+
+
+@media screen and (max-width: 600px) {
+    .profile-container {
+        padding: 3.5rem 1rem;
+        width: max-content !important;
+    }
+
+    #email {
+        font-size: 12px;
+    }
+
+    
+
+    #floatButton {
+        bottom: 20px !important;
+        right: 20px !important;
+    }
+}
+
+@media screen and (max-width: 285px) {
+    .formats-container {
+        width: min-content;
+    }
+
+    .prompt-input-container {
+        width: fit-content;
+    }
+
+    #authorName {
+        min-width: 76%;
+    }
+
+    #contentButton {
+        width: 50%;
+    }
+
+    .degradado-texto {
+        font-size: 14px !important;
+    }
+}

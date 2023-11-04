@@ -22,6 +22,45 @@ body {
 
 /* MEDIAS */
 
+
+@media screen and (max-height: 848px) {
+    body * {
+        display: none !important;
+    }
+
+    menu * {
+        display: none !important;
+    }
+
+    .first-profile-container {
+        display: none !important;
+    }
+
+    .menu-border .menu {
+        display: none;
+    }
+
+    body::before {
+        height: 100%;
+        background-image: url('https://res.cloudinary.com/dspqjweej/image/upload/v1698623264/recursos/eating_doritos_vx6obe.jpg');
+        background-size: 10rem;
+        background-position: top;
+        display: flex;
+        background-repeat: no-repeat;
+        content: "Sólo disponible en PC";
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        font-size: 24px;
+        color: rgb(233, 233, 233);
+        /* Color del texto */
+        margin-top: 10%;
+        padding-top: -30%;
+        /* Espacio superior para separar del contenido original */
+    }
+}
+
 @media screen and (max-height: 730px) {
     #firstInputUser {
         height: 100%;
@@ -45,7 +84,7 @@ body {
     }
 
     .menu li {
-        width: 30% !important;
+        width: 40% !important;
     }
 
     #soon {
@@ -62,6 +101,8 @@ body {
         width: fit-content;
         margin: 1rem !important;
     }
+
+    
 }
 
 @media screen and (max-width: 596px) {
@@ -203,12 +244,18 @@ body {
 }
 
 @media screen and (max-width: 657px) {
+
+    .menu li a {
+        font-size: 0.7rem;
+    }
+
     .tokens img {
         display: none;
+        
     }
 
     .tokens {
-        width: 60%;
+        width: 50%;
     }
 }
 
@@ -239,5 +286,28 @@ body {
 @media screen and (max-width: 1280px) {
     .format-container {
         width: 75%;
+    }
+}
+
+
+@media screen and (max-width: 285px) {
+    .formats-container {
+        width: min-content;
+    }
+
+    .prompt-input-container {
+        width: fit-content;
+    }
+
+    #authorName {
+        min-width: 76%;
+    }
+
+    #contentButton {
+        width: 50%;
+    }
+
+    .degradado-texto {
+        font-size: 14px !important;
     }
 }

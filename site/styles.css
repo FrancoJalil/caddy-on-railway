@@ -1145,3 +1145,5 @@ input[type="range"] {
     -webkit-background-clip: text; /* Propiedad específica de WebKit para recortar el degradado al texto */
     color: transparent; /* Hace que el texto sea transparente para que se muestre el degradado detrás */
 }
+
+
