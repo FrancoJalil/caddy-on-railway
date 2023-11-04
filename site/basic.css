@@ -23,7 +23,7 @@ body {
 /* MEDIAS */
 
 
-@media screen and (max-height: 848px) {
+@media screen and (max-width: 700px) {
     body * {
         display: none !important;
     }
