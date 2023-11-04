@@ -78,21 +78,27 @@ body {
 
 
 @media screen and (max-width: 980px) {
+
+    .container-buttons-generated {
+        flex-direction: column !important;
+    }
+
     .container-editable {
-        flex-direction: column;
+        display: flex !important;
+        flex-direction: column !important;
     }
 
     .downButtons {
-        display: flex;
-        justify-content: center;
+        display: flex !important;
+        justify-content: center !important;
+        padding: 1rem !important;
         
     }
 
     .upButtons {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 1rem;
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
     }
 }
 
