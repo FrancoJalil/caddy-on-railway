@@ -64,11 +64,38 @@ body {
     }
 }
 
+@media screen and (max-width: 596px) {
+    #container-buttons-generated {
+        flex-direction: column;
+    }
+}
+
 @media screen and (max-width: 579px) {
     #author-modal {
         width: 100% !important;
     }
 }
+
+
+@media screen and (max-width: 980px) {
+    .container-editable {
+        flex-direction: column;
+    }
+
+    .downButtons {
+        display: flex;
+        justify-content: center;
+        
+    }
+
+    .upButtons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 1rem;
+    }
+}
+
 
 @media screen and (max-width: 1014px) {
 
