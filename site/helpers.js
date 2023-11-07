@@ -400,7 +400,7 @@ export function generateImage() {
 
 
     ////console.log("loading...")
-    showLoading(true, "Generando posteos... (120s aprox.)", "Creando");
+    showLoading(true, "Generando posteos... (80s aprox.)", "Creando");
     activarContador();
 
     // hacer cositas cuando esté cargando...
